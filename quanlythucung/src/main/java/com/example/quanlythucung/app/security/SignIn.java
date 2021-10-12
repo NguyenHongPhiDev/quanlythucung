@@ -27,7 +27,7 @@ public class SignIn {
 
     @RequestMapping(value = "/login", method = {RequestMethod.GET, RequestMethod.POST})
     public String login() {
-        return "login";
+        return "login/login";
     }
 
     @RequestMapping("/login-facebook")
