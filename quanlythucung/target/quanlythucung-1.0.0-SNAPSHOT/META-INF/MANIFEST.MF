@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Created-By: IntelliJ IDEA
+Built-By: Asus
+Build-Jdk: 1.8.0_301
+Implementation-Title: TERASOLUNA Server Framework for Java (5.x) Web Bla
+ nk Project (JPA)
+Implementation-Version: 1.0.0-SNAPSHOT
+Implementation-Vendor-Id: com.example.quanlythucung
+

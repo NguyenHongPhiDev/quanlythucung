@@ -21,12 +21,23 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" value="6b388e04-8ea3-431e-b32e-dd3b6308db04" />
+          <factory-entry name="quanlythucung" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/quanlythucung-domain.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/spring-security.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/quanlythucung-env.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/spring-mvc.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/quanlythucung-infra.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/META-INF/spring/quanlythucung-codelist.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">

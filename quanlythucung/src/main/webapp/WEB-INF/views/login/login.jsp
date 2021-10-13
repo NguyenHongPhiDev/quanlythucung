@@ -37,7 +37,6 @@
     <link rel="icon" href="images/favicon.png">
 </head>
 <body>
-
 <!-- Navigation -->
 <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
     <div class="container">
