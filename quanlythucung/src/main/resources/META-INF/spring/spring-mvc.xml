@@ -61,10 +61,11 @@
     </mvc:interceptors>
 
     <!-- Settings View Resolver. -->
-    <mvc:view-resolvers>
-        <mvc:jsp prefix="/WEB-INF/views/" />
+    <mvc:view-resolvers >
+        <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+            <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+        </bean>
     </mvc:view-resolvers>
-
     <bean id="requestDataValueProcessor"
         class="org.terasoluna.gfw.web.mvc.support.CompositeRequestDataValueProcessor">
         <constructor-arg>
@@ -76,7 +77,14 @@
             </util:list>
         </constructor-arg>
     </bean>
-
+    <bean id="tilesConfigurer"
+          class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions">
+            <list>
+                <value>/WEB-INF/layout-definitions.xml</value>
+            </list>
+        </property>
+    </bean>
     <!-- Setting Exception Handling. -->
     <!-- Exception Resolver. -->
     <bean id="systemExceptionResolver"

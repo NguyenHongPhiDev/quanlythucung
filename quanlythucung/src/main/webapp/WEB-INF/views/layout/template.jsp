@@ -1,22 +1,27 @@
-<%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
-<!DOCTYPE html>
-<html class="no-js">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@ page session="false"%>
+<html>
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width"/>
-    <script type="text/javascript">
-
-    </script>
-    <c:set var="titleKey">
-        <tiles:insertAttribute name="title" ignore="true"/>
-    </c:set>
-    <title><spring:message code="${titleKey}" text="authority"/></title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/app/css/styles.css">
+    <title>Home</title>
+    <tiles:insertAttribute name="header" />
 </head>
-<body>
-<div class="container">
-    <tiles:insertAttribute name="body"/>
-</div>
+<body data-bs-spy="scroll" data-bs-target="#navbarExample">
+
+<!-- Navigation -->
+<tiles:insertAttribute name="menu" />
+<!-- Header -->
+
+
+<tiles:insertAttribute name="body" />
+
+<tiles:insertAttribute name="footer" />
+
+<!-- Back To Top Button -->
+<button onclick="topFunction()" id="myBtn">
+    <img src="images/up-arrow.png" alt="alternative">
+</button>
+<!-- end of back to top button -->
+
 </body>
 </html>
