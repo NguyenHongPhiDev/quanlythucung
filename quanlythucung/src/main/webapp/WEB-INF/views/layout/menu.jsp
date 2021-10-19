@@ -14,54 +14,97 @@
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ms-auto navbar-nav-scroll">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#header">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#features">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#details">Details</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#pricing">Pricing</a>
+                    <a class="nav-link active" aria-current="page" href="index">Trang chủ</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Drop</a>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Nhãn Hiệu</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown01">
-                        <li><a class="dropdown-item" href="article.html">Article Details</a></li>
+                        <li><a class="dropdown-item" href="#">Hana Pet</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="terms.html">Terms Conditions</a></li>
+                        <li><a class="dropdown-item" href="#">Kong (USA)</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Privacy Policy</a></li>
+                        <li><a class="dropdown-item" href="#">Meo (Thailand)</a></li>
                     </ul>
                 </li>
-            </ul>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">Shop Cho Chó</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                        <li><a class="dropdown-item" href="article.html">Thức ăn cho chó</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="terms.html">Quần áo cho chó</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Vật dụng ăn uống cho chó</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Y tế và thuốc cho chó</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Dụng Cụ Vệ Sinh</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Chuồng chó,nhà,giường,túi</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Đồ chỉ bán online</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Shop Cho Mèo</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                        <li><a class="dropdown-item" href="article.html">Thức ăn cho mèo</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="terms.html">Quần áo cho mèo</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Vật dụng ăn uống cho mèo</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Y tế và thuốc cho mèo</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Dụng Cụ Vệ Sinh</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Chuồng mèo,nhà,giường,túi</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="privacy.html">Cát vệ sinh</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index">Khuyến Mãi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="index">Liên Hệ</a>
+                </li>
+
+            <sec:authorize access="hasRole('ADMIN')">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown" aria-expanded="false">Quản lý</a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown08">
+                        <li><a class="dropdown-item" href="#">Danh sách thành viên</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="#">Danh sách nhân viên</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="#">Kho hàng</a></li>
+                        <li><div class="dropdown-divider"></div></li>
+                        <li><a class="dropdown-item" href="#">Thống kê</a></li>
+                    </ul>
+                </li>
+            </sec:authorize>
             <sec:authorize access="!isAuthenticated()">
                 <span class="nav-item">
-                            <a class="btn-outline-sm" href="login">Log in</a>
+                            <a class="btn-outline-sm" href="login">Đăng Nhập</a>
                 </span>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">
-                <a href="${pageContext.request.contextPath}/store/member/update" class="btn btn-title">
                 <sec:authentication var="user" property="principal" />
-                    Xin chào ${user.username}
-                </a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">${user.username}</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown09">
+                                <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
+                                <li><div class="dropdown-divider"></div></li>
+                                <li><a class="dropdown-item" href="#">Lịch sử giao dịch</a></li>
+                                <li><div class="dropdown-divider"></div></li>
+                                <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                                <li><div class="dropdown-divider"></div></li>
+                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                            </ul>
+                        </li>
             </sec:authorize>
+            </ul>
         </div> <!-- end of navbar-collapse -->
     </div> <!-- end of container -->
 </nav> <!-- end of navbar -->
-<!-- end of navigation -->
-<header id="header" class="header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="text-container">
-                    <h1 class="h1-large">The #1 CRM app for <span class="replace-me">small business, young startups, bootstrappers</span></h1>
-                    <p class="p-large">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim, neque ut vanic barem ultrices sollicitudin</p>
-                    <a class="btn-solid-lg" href="sign-up.html">Sign up for free</a>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</header> <!-- end of header -->
-<!-- end of header -->
