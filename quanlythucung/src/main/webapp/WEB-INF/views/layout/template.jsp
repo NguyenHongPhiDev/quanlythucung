@@ -5,6 +5,7 @@
 <head>
     <title>Home</title>
     <tiles:insertAttribute name="header" />
+
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarExample">
 
@@ -17,11 +18,6 @@
 
 <tiles:insertAttribute name="footer" />
 
-<!-- Back To Top Button -->
-<button onclick="topFunction()" id="myBtn">
-    <img src="images/up-arrow.png" alt="alternative">
-</button>
-<!-- end of back to top button -->
 
 </body>
 </html>

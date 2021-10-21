@@ -410,3 +410,9 @@
     </div> <!-- end of container -->
 </div> <!-- end of accordion-1 -->
 <!-- end of questions -->
+
+<!-- Back To Top Button -->
+<button onclick="topFunction()" id="myBtn">
+    <img src="images/up-arrow.png" alt="alternative">
+</button>
+<!-- end of back to top button -->

@@ -63,13 +63,13 @@
 
                     </ul>
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="index">Khuyến Mãi</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="index">Liên Hệ</a>
                 </li>
-
             <sec:authorize access="hasRole('ADMIN')">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown" aria-expanded="false">Quản lý</a>
@@ -92,7 +92,10 @@
             <sec:authorize access="isAuthenticated()">
                 <sec:authentication var="user" property="principal" />
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">${user.username}</a>
+                            <a class="nav-link dropdown-toggle active" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="" width="16" height="16" class="rounded-circle me-2">
+                                    ${user.username}
+                            </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown09">
                                 <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
                                 <li><div class="dropdown-divider"></div></li>
@@ -100,7 +103,7 @@
                                 <li><div class="dropdown-divider"></div></li>
                                 <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
                                 <li><div class="dropdown-divider"></div></li>
-                                <li><a class="dropdown-item" href="#">Đăng xuất</a></li>
+                                <li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
                             </ul>
                         </li>
             </sec:authorize>

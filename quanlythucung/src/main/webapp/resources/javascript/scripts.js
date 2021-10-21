@@ -29,7 +29,7 @@ for (let i = 0; i < elements.length; i++) {
 }
 
 document.querySelector(".navbar-toggler").addEventListener("click", () => {
-  	document.querySelector(".offcanvas-collapse").classList.toggle("open");
+	document.querySelector(".offcanvas-collapse").classList.toggle("open");
 });
 
 // Hover on desktop
@@ -39,11 +39,11 @@ function toggleDropdown(e) {
 
 	setTimeout(
 		function () {
-		const shouldOpen = _d.matches(":hover");
-		_m.classList.toggle("show", shouldOpen);
-		_d.classList.toggle("show", shouldOpen);
+			const shouldOpen = _d.matches(":hover");
+			_m.classList.toggle("show", shouldOpen);
+			_d.classList.toggle("show", shouldOpen);
 
-		_d.setAttribute("aria-expanded", shouldOpen);
+			_d.setAttribute("aria-expanded", shouldOpen);
 		},
 		e.type === "mouseleave" ? 300 : 0
 	);
@@ -52,7 +52,7 @@ function toggleDropdown(e) {
 // On hover
 const dropdownCheck = document.querySelector('.dropdown');
 
-if (dropdownCheck !== null) { 
+if (dropdownCheck !== null) {
 	document.querySelector(".dropdown").addEventListener("mouseleave", toggleDropdown);
 	document.querySelector(".dropdown").addEventListener("mouseover", toggleDropdown);
 
@@ -73,7 +73,7 @@ if (dropdownCheck !== null) {
 
 /* Rotating Text - Word Cycle */
 var checkReplace = document.querySelector('.replace-me');
-if (checkReplace !== null) { 
+if (checkReplace !== null) {
 	var replace = new ReplaceMe(document.querySelector('.replace-me'), {
 		animation: 'animated fadeIn',                       // Animation class or classes
 		speed: 2000,                                        // Delay between each phrase in miliseconds
@@ -87,7 +87,7 @@ if (checkReplace !== null) {
 		onComplete: false                                   // Function
 	});
 }
-  
+
 
 /* Card Slider - Swiper */
 var cardSlider = new Swiper('.card-slider', {

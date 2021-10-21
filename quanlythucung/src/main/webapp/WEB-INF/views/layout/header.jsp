@@ -13,12 +13,12 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/plugin/jtsage/jtsage-datebox-5.3.3.bootstrap4.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/plugin/jtsage/jtsage-datebox.lang.utf8.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/common.js"></script>
-<script src="${f:h(pageContext.request.contextPath)}/resources/app/javascript/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-<script src="${f:h(pageContext.request.contextPath)}/resources/app/javascript/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-<script src="${f:h(pageContext.request.contextPath)}/resources/app/javascript/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
-<script src="${f:h(pageContext.request.contextPath)}/resources/app/javascript/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
-<script src="${f:h(pageContext.request.contextPath)}/resources/app/javascript/scripts.js"></script> <!-- Custom scripts -->
-<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/app/css/bootstrap.min.css"/>
-<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/app/css/fontawesome-all.min.css"/>
-<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/app/css/swiper.css"/>
-<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/app/css/styles.css"/><script src="${f:h(pageContext.request.contextPath)}/resources/app/javascript/scripts.js"></script> <!-- Custom scripts -->
+<script src="${f:h(pageContext.request.contextPath)}/resources/javascript/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+<script src="${f:h(pageContext.request.contextPath)}/resources/javascript/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+<script src="${f:h(pageContext.request.contextPath)}/resources/javascript/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+<script src="${f:h(pageContext.request.contextPath)}/resources/javascript/replaceme.min.js"></script> <!-- ReplaceMe for rotating text -->
+<script src="${f:h(pageContext.request.contextPath)}/resources/javascript/scripts.js"></script> <!-- Custom scripts -->
+<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/bootstrap.min.css"/>
+<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/fontawesome-all.min.css"/>
+<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/swiper.css"/>
+<link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/styles.css"/>

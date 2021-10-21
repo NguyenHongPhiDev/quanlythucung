@@ -12,8 +12,9 @@
         <sec:form-login login-page="/login"
                         login-processing-url="/login" username-parameter="username"
                         password-parameter="password" />
-<!--        <sec:logout logout-url="/logout" success-handler-ref="logoutSuccessHandler"-->
-<!--                    delete-cookies="JSESSIONID" />-->
+        <sec:logout logout-url="/logout"
+                    delete-cookies="JSESSIONID"
+                    invalidate-session="true" logout-success-url="/login"/>
         <sec:access-denied-handler ref="accessDeniedHandler"/>
         <sec:custom-filter ref="userIdMDCPutFilter" after="ANONYMOUS_FILTER"/>
         <sec:session-management />
@@ -65,10 +66,4 @@
     <!-- Put UserID into MDC -->
     <bean id="userIdMDCPutFilter" class="org.terasoluna.gfw.security.web.logging.UserIdMDCPutFilter">
     </bean>
-
-
-<!--    <bean id="logoutSuccessHandler"-->
-<!--          class="com.example.securelogin.app.common.security.CacheClearLogoutSuccessHandler">-->
-<!--        <constructor-arg value="/" />-->
-<!--    </bean>-->
 </beans>
