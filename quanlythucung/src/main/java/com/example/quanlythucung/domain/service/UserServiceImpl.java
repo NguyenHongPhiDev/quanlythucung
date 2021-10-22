@@ -6,7 +6,10 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -40,5 +43,20 @@ public class UserServiceImpl implements UserService {
     @Override
     public boolean isInitialPassword(String username) {
         return false;
+    }
+
+    @Override
+    public void update(User user) {
+        User result = userRepository.findUserByUsername(user.getUsername());
+        result.setFullName(user.getFullName());
+        result.setEmail(user.getEmail());
+        result.setBirthDate(user.getBirthDate());
+        result.setSex(user.getSex());
+        result.setAddress(user.getAddress());
+        result.setPhoneNumber(user.getPhoneNumber());
+        Date now = new Date();
+        Timestamp updateTime = new Timestamp(now.getTime());
+        result.setUpdatedAt(updateTime);
+        userRepository.save(result);
     }
 }

@@ -24,5 +24,14 @@
         <property name="labelColumn" value="code_name" />
     </bean>
     -->
-
+    <bean id="CL_SEX" class="org.terasoluna.gfw.common.codelist.SimpleMapCodeList">
+        <property name="map">
+            <util:map key-type="java.lang.String" value-type="java.lang.String"
+                      map-class="java.util.LinkedHashMap">
+                <entry key="1" value="Nam" />
+                <entry key="2" value="Nữ" />
+                <entry key="0" value="Không xác định" />
+            </util:map>
+        </property>
+    </bean>
 </beans>

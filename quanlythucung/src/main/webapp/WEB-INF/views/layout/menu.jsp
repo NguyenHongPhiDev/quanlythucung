@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="index"><img src="${pageContext.request.contextPath}/resources/images/logo.jpg" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.jpg" alt="alternative"></a>
 
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
@@ -14,7 +14,7 @@
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ms-auto navbar-nav-scroll">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index">Trang chủ</a>
+                    <a class="nav-link active" aria-current="page" href="${pageContext.request.contextPath}/">Trang chủ</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Nhãn Hiệu</a>
@@ -97,13 +97,13 @@
                                     ${user.username}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown09">
-                                <li><a class="dropdown-item" href="#">Thông tin tài khoản</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/account">Thông tin tài khoản</a></li>
                                 <li><div class="dropdown-divider"></div></li>
                                 <li><a class="dropdown-item" href="#">Lịch sử giao dịch</a></li>
                                 <li><div class="dropdown-divider"></div></li>
-                                <li><a class="dropdown-item" href="#">Đổi mật khẩu</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/account/password">Đổi mật khẩu</a></li>
                                 <li><div class="dropdown-divider"></div></li>
-                                <li><a class="dropdown-item" href="logout">Đăng xuất</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Đăng xuất</a></li>
                             </ul>
                         </li>
             </sec:authorize>

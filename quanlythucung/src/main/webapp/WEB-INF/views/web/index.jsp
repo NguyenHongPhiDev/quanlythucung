@@ -15,7 +15,7 @@
                         <span class="fas fa-headphones-alt"></span>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Customer Lists</h4>
+                        <h6 class="card-title">Customer Lists</h6>
                         <p>Et blandit nisl libero at arcu. Donec ac lectus sed tellus mollis viverra. Nullam pharetra ante at nunc elementum</p>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                         <span class="far fa-clipboard"></span>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Sales Tracking</h4>
+                        <h6 class="card-title">Sales Tracking</h6>
                         <p>Vulputate nibh feugiat. Morbi pellent diam nec libero lacinia, sed ultrices velit scelerisque. Nunc placerat justo sem</p>
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <span class="far fa-comments"></span>
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title">Reporting Tool</h4>
+                        <h6 class="card-title">Reporting Tool</h6>
                         <p>Ety suscipit metus sollicitudin euqu isq imperdiet nibh nec magna tincidunt, nec pala vehicula neque sodales verum</p>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <h3>Goals Setting</h3>
                     <hr>
                     <p>In gravida at nunc sodales pretium. Vivamus semper, odio vitae mattis auctor, elit elit semper magna ac tum nico vela spider</p>
-                    <h4>User Feedback</h4>
+                    <h6>User Feedback</h6>
                     <p>Sapien vitae eros. Praesent ut erat a tellus posuere nisi more thico cursus pharetra finibus posuere nisi. Vivamus feugiat</p>
                     <ul class="list-unstyled li-space-lg">
                         <li class="d-flex">
@@ -269,7 +269,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h4>Ioniq will change the way you think about CRM solutions due to it’s advanced tools and integrated functionalities</h4>
+                <h6>Ioniq will change the way you think about CRM solutions due to it’s advanced tools and integrated functionalities</h6>
                 <a class="btn-outline-lg page-scroll" href="sign-up.html">Sign up for free</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->

@@ -68,7 +68,7 @@ h3 {
 	letter-spacing: -0.2px;
 }
 
-h4 {
+h6 {
 	color: #272556;
 	font-weight: 600;
 	font-size: 1.5rem;
@@ -631,7 +631,7 @@ a:hover {
 	background-color: #53575a;
 }
 
-.modal-content h4 {
+.modal-content h6 {
 	margin-top: 2rem;
 	margin-bottom: 0.625rem;
 }
@@ -768,7 +768,7 @@ a:hover {
 	text-align: center;
 }
 
-.basic-3 h4 {
+.basic-3 h6 {
 	margin-bottom: 2.375rem;
 	color: #ffffff;
 }
@@ -1295,7 +1295,7 @@ a:hover {
 
 
 	/* Invitation */
-	.basic-3 h4 {
+	.basic-3 h6 {
 		width: 44rem;
 		margin-right: auto;
 		margin-left: auto;

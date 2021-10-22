@@ -18,4 +18,6 @@ public interface UserService {
     boolean isLocked(String username);
 
     boolean isInitialPassword(String username);
+
+    void update(User user);
 }

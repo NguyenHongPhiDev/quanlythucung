@@ -31,7 +31,7 @@ p {
     margin: 0 0 30px 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h6, h5, h6 {
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
     margin: 0 0 20px 0;
@@ -558,7 +558,7 @@ section {
     font-size: 36px;
     float: left;
 }
-#why-us .why-us-content .features h4 {
+#why-us .why-us-content .features h6 {
     font-size: 24px;
     font-weight: 600;
     margin-left: 56px;
@@ -633,7 +633,7 @@ section {
 #features {
     padding: 80px 0;
 }
-#features h4 {
+#features h6 {
     font-weight: 600;
     font-size: 24px;
 }
@@ -694,17 +694,17 @@ section {
     opacity: 0;
     transition: 0.2s linear;
 }
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info h4 {
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info h6 {
     font-size: 22px;
     line-height: 1px;
     font-weight: 700;
     margin-bottom: 14px;
     padding-bottom: 0;
 }
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info h4 a {
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info h6 a {
     color: #fff;
 }
-#portfolio .portfolio-item .portfolio-wrap .portfolio-info h4 a:hover {
+#portfolio .portfolio-item .portfolio-wrap .portfolio-info h6 a:hover {
     color: #1bb1dc;
 }
 #portfolio .portfolio-item .portfolio-wrap .portfolio-info p {
@@ -835,7 +835,7 @@ section {
     color: #111;
     margin-left: 140px;
 }
-#testimonials .testimonial-item h4 {
+#testimonials .testimonial-item h6 {
     font-size: 14px;
     color: #999;
     margin: 0 0 15px 0;
@@ -851,7 +851,7 @@ section {
     }
 }
 @media (max-width: 767px) {
-    #testimonials .testimonial-item h3, #testimonials .testimonial-item h4, #testimonials .testimonial-item p {
+    #testimonials .testimonial-item h3, #testimonials .testimonial-item h6, #testimonials .testimonial-item p {
         margin-left: 0;
     }
 }
@@ -904,7 +904,7 @@ section {
 #team .member:hover .member-info-content {
     height: 70px;
 }
-#team .member h4 {
+#team .member h6 {
     font-weight: 700;
     margin-bottom: 2px;
     font-size: 18px;
@@ -1198,7 +1198,7 @@ section {
         margin-bottom: 25px;
     }
 }
-#footer .footer-top h4 {
+#footer .footer-top h6 {
     font-size: 14px;
     font-weight: bold;
     color: #413e66;
