@@ -3,12 +3,14 @@ package com.example.quanlythucung.domain.service;
 import com.example.quanlythucung.domain.model.User;
 import com.example.quanlythucung.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.Optional;
 
 
 @Service
@@ -16,6 +18,8 @@ public class UserServiceImpl implements UserService {
 
     @Inject
     UserRepository userRepository;
+    @Inject
+    PasswordEncoder passwordEncoder;
     @Override
     public LocalDateTime getLastLoginDate(String username) {
         return null;
@@ -57,6 +61,13 @@ public class UserServiceImpl implements UserService {
         Date now = new Date();
         Timestamp updateTime = new Timestamp(now.getTime());
         result.setUpdatedAt(updateTime);
+        userRepository.save(result);
+    }
+
+    @Override
+    public void changePassword(String username,String password) {
+        User result = userRepository.findUserByUsername(username);
+        result.setPassword(passwordEncoder.encode(password));
         userRepository.save(result);
     }
 }

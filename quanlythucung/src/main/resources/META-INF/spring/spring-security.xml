@@ -20,6 +20,7 @@
         <sec:session-management />
         <sec:csrf disabled="true"/>
         <sec:intercept-url pattern="/account" access="isAuthenticated()" />
+        <sec:intercept-url pattern="/account/**" access="isAuthenticated()" />
         <sec:intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
         <sec:intercept-url pattern="/login" access="permitAll" />
         <sec:intercept-url pattern="/**" access="permitAll" />

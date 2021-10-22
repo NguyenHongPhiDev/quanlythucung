@@ -2,7 +2,16 @@
     <div class="container bootstrap snippet">
 <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-        <form:form modelAttribute="userUpdate" action="${pageContext.request.contextPath}/account" id="registrationForm">
+        <spring:hasBindErrors name="memberChangePassword">
+            <div class="hide alert alert-danger mt-0 alert-dismissible" role="alert" id="errorMsg">
+                <c:forEach var="error" items="${errLst}">
+                    <b><c:out value="${error}" escapeXml="false"/></b>
+                    <br />
+                </c:forEach>
+                <button type="button" class="close" data-hide="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+        </spring:hasBindErrors>
+        <form:form modelAttribute="memberChangePassword" action="${pageContext.request.contextPath}/account/password" id="registrationForm">
 
             <div class="form-group mt-4">
                 <div class="col-xs-6 input-group">
@@ -46,7 +55,7 @@
             <div class="form-group">
                 <div class="col-md-9 ml-auto p-0">
                     <br>
-                    <button class="btn btn-success" name="update" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Lưu</button>
+                    <button class="btn btn-success" name="change" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Lưu</button>
                     <button class="btn" type="reset" onclick="reset()"><i class="glyphicon glyphicon-repeat"></i> Nhập lại</button>
                 </div>
             </div>

@@ -20,4 +20,5 @@ public interface UserService {
     boolean isInitialPassword(String username);
 
     void update(User user);
+    void changePassword(String username,String password);
 }
