@@ -34,4 +34,6 @@ public class Categories {
     public void setCatName(String catName) {
         this.catName = catName;
     }
+    @OneToOne(mappedBy = "categories")
+    private Product product;
 }

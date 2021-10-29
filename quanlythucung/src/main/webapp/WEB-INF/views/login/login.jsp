@@ -15,26 +15,26 @@
                                         </div>
 
                                         <form:form action="${f:h(pageContext.request.contextPath)}/login">
-                                            <p>Please login to your account</p>
+                                            <p>Vui lòng đăng nhập</p>
 
                                             <div class="form-outline mb-4">
+                                                <label class="form-label" for="username">Tên đăng nhập</label>
                                                 <input type="text" class="form-control" id="username" name="username" placeholder="Phone number or email address"/>
-                                                <label class="form-label" for="username">Username</label>
                                             </div>
 
                                             <div class="form-outline mb-4">
+                                                <label class="form-label" for="password">Mật khẩu</label>
                                                 <input type="password" class="form-control" id="password" name="password" />
-                                                <label class="form-label" for="password">Password</label>
                                             </div>
 
                                             <div class="text-center pt-1 mb-5 pb-1">
+                                                <a class="text-muted" href="#!">Quên mật khẩu?</a>
                                                 <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log in</button>
-                                                <a class="text-muted" href="#!">Forgot password?</a>
                                             </div>
 
                                             <div class="d-flex align-items-center justify-content-center pb-4">
-                                                <p class="mb-0 me-2">Don't have an account?</p>
-                                                <button type="button" class="btn btn-outline-danger">Create new</button>
+                                                <p class="mb-0 me-2">Bạn chưa có tài khoản?</p>
+                                                <a class="text-muted" href="${pageContext.request.contextPath}/register">Đăng ký ngay</a>
                                             </div>
 
                                         </form:form>

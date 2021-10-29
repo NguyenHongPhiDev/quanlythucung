@@ -7,8 +7,6 @@ import lombok.Setter;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-@Getter
-@Setter
 public class MemberChangePassword {
 
     @NotEmpty(message = "Mật khẩu cũ không được để trống")
@@ -25,5 +23,30 @@ public class MemberChangePassword {
     @Size(min = 8, max = 36, message = "Xác nhận mật khẩu phải từ 8-36 ký tự")
     @PasswordAdvanceConstraint(message = "Xác nhận mật khẩu phải chứa chữ hoa, chữ thường,số,ký tự đặc biệt")
     private String passwordConfirm;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPasswordNew() {
+        return passwordNew;
+    }
+
+    public void setPasswordNew(String passwordNew) {
+        this.passwordNew = passwordNew;
+    }
+
+    public String getPasswordConfirm() {
+        return passwordConfirm;
+    }
+
+    public void setPasswordConfirm(String passwordConfirm) {
+        this.passwordConfirm = passwordConfirm;
+    }
+
 
 }

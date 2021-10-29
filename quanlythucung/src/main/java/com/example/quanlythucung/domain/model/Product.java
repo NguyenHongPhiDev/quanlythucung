@@ -16,7 +16,7 @@ public class Product {
     @Column(name = "ID_Brand")
     private Integer idBrand;
 
-    @Column(name = "ID_Cat")
+    @Column(name = "ID_Cat",insertable = false,updatable = false)
     private Integer idCat;
 
     @Column(name = "price")
@@ -155,4 +155,7 @@ public class Product {
     public void setUpdatedUser(Timestamp updatedUser) {
         this.updatedUser = updatedUser;
     }
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_Cat",referencedColumnName = "ID_Cat")
+    private Categories categories;
 }

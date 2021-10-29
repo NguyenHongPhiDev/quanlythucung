@@ -22,7 +22,7 @@ public class Role implements java.io.Serializable {
     }
 
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Role", unique = true, nullable = false)
     public Integer getRoleId() {
         return this.roleId;

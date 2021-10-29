@@ -1,7 +1,12 @@
 package com.example.quanlythucung.domain.service;
 
+import com.example.quanlythucung.domain.common.exception.BadRequestException;
+import com.example.quanlythucung.domain.model.Role;
 import com.example.quanlythucung.domain.model.User;
+import com.example.quanlythucung.domain.model.UserRole;
+import com.example.quanlythucung.domain.repository.RoleRepository;
 import com.example.quanlythucung.domain.repository.UserRepository;
+import com.example.quanlythucung.domain.repository.UserRoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -20,6 +25,10 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
     @Inject
     PasswordEncoder passwordEncoder;
+    @Inject
+    RoleRepository roleRepository;
+    @Inject
+    UserRoleRepository userRoleRepository;
     @Override
     public LocalDateTime getLastLoginDate(String username) {
         return null;
@@ -32,6 +41,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void create(User user) {
+        User result = userRepository.findUserByUsername(user.getUsername());
+        if (result != null) {
+            throw new BadRequestException("User exit early!!");
+        }
+        User user1 = new User();
+        user1.setUsername(user.getUsername());
+        //encode password
+        String password1 = passwordEncoder.encode(user.getPassword());
+        user1.setPassword(password1);
+        UserRole userRole = new UserRole();
+        Role role = roleRepository.findRoleByRoleName("ROLE_USER");
+        userRole.setUser(user1);
+        userRole.setRole(role);
+        userRepository.save(user1);
+        userRoleRepository.save(userRole);
     }
 
     @Override

@@ -29,37 +29,35 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">Shop Cho Chó</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                        <li><a class="dropdown-item" href="article.html">Thức ăn cho chó</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/dog/food">Thức ăn cho chó</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="terms.html">Quần áo cho chó</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/dog/clothes">Quần áo cho chó</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Vật dụng ăn uống cho chó</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/dog/Item">Vật dụng ăn uống cho chó</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Y tế và thuốc cho chó</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/dog/medicine">Y tế và thuốc cho chó</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Dụng Cụ Vệ Sinh</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/dog/cleaning-tool">Dụng Cụ Vệ Sinh</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Chuồng chó,nhà,giường,túi</a></li>
-                        <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Đồ chỉ bán online</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/dog/cage">Chuồng chó,nhà,giường,túi</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown03" data-bs-toggle="dropdown" aria-expanded="false">Shop Cho Mèo</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                        <li><a class="dropdown-item" href="article.html">Thức ăn cho mèo</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cat/food">Thức ăn cho mèo</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="terms.html">Quần áo cho mèo</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cat/clothes">Quần áo cho mèo</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Vật dụng ăn uống cho mèo</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cat/Item">Vật dụng ăn uống cho mèo</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Y tế và thuốc cho mèo</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cat/medicine">Y tế và thuốc cho mèo</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Dụng Cụ Vệ Sinh</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cat/cleaning-tool">Dụng Cụ Vệ Sinh</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Chuồng mèo,nhà,giường,túi</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cat/cage">Chuồng mèo,nhà,giường,túi</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="privacy.html">Cát vệ sinh</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cat/sand">Cát vệ sinh</a></li>
 
                     </ul>
                 </li>
@@ -86,7 +84,7 @@
             </sec:authorize>
             <sec:authorize access="!isAuthenticated()">
                 <span class="nav-item">
-                            <a class="btn-outline-sm" href="login">Đăng Nhập</a>
+                            <a class="btn-outline-sm" href="${pageContext.request.contextPath}/login">Đăng Nhập</a>
                 </span>
             </sec:authorize>
             <sec:authorize access="isAuthenticated()">

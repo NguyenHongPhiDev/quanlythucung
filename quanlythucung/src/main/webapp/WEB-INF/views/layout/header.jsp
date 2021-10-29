@@ -22,3 +22,7 @@
 <link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/fontawesome-all.min.css"/>
 <link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/swiper.css"/>
 <link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/styles.css"/>
+<c:if test="${!empty styleSheet}">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/stylesheet/${styleSheet}">
+</c:if>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">

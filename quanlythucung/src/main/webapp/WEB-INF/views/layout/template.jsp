@@ -5,7 +5,9 @@
 <head>
     <title>Home</title>
     <tiles:insertAttribute name="header" />
+<c:if test="${style!=null}">
 
+</c:if>
 </head>
 <body data-bs-spy="scroll" data-bs-target="#navbarExample">
 
@@ -13,9 +15,11 @@
 <tiles:insertAttribute name="menu" />
 <!-- Header -->
 
-
-<tiles:insertAttribute name="body" />
-
+<div id="details" class="basic-1 bg-gray">
+    <div class="container bootstrap snippet">
+        <tiles:insertAttribute name="body" />
+    </div>
+</div>
 <tiles:insertAttribute name="footer" />
 
 

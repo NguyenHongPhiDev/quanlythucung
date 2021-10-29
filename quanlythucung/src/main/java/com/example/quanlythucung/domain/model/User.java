@@ -19,7 +19,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "USERNAME"))
 public class User implements java.io.Serializable {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_User", unique = true, nullable = false)
     private Integer id;
     @Column(name = "fullName")

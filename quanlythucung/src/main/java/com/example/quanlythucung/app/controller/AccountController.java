@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,8 +34,8 @@ public class AccountController {
     private List<String> errLst = new ArrayList<String>();
     @RequestMapping(value = {"","/"})
     public String accountInit( Principal principal, Model model){
-//        User user = userService.findOne(principal.getName());
-//        model.addAttribute("user",user);
+        User user = userService.findOne(principal.getName());
+        model.addAttribute("user",user);
         return "account/index";
     }
     @RequestMapping(value = {"","/"},method = RequestMethod.POST,params = "update")
@@ -52,7 +53,7 @@ public class AccountController {
                 }
             }
         }
-//        model.addAttribute("errLst",errLst);
+        model.addAttribute("errLst",errLst);
         return "account/changePassword";
     }
     @RequestMapping(value = {"/password","/password/"},method = RequestMethod.POST, params = "change")
@@ -70,7 +71,7 @@ public class AccountController {
         userService.changePassword(principal.getName(),memberChangePassword.getPasswordNew());
         return "redirect:/";
     }
-    private Result validateMember(MemberChangePassword memberChangePassword, BindingResult bindingResult,User user) {
+    private Result validateMember(@Validated MemberChangePassword memberChangePassword, BindingResult bindingResult, User user) {
         Result moResult = new Result();
         if (bindingResult.hasErrors()) {
             List<String> errorMsgs = new ArrayList<>();

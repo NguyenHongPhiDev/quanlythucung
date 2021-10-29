@@ -1,6 +1,5 @@
 <!-- Features -->
 <div id="features" class="cards-1">
-    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="h2-heading">Ioniq CRM application is packed with <span>awesome features</span></h2>
@@ -47,14 +46,12 @@
 
             </div> <!-- end of col -->
         </div> <!-- end of row -->
-    </div> <!-- end of container -->
 </div> <!-- end of cards-1 -->
 <!-- end of services -->
 
 
 <!-- Details 1 -->
 <div id="details" class="basic-1 bg-gray">
-    <div class="container">
         <div class="row">
             <div class="col-lg-6 col-xl-5">
                 <div class="text-container">
@@ -69,7 +66,6 @@
                 </div> <!-- end of image-container -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
-    </div> <!-- end of container -->
 </div> <!-- end of basic-1 -->
 <!-- end of details 1 -->
 
@@ -125,7 +121,6 @@
 
 <!-- Details 2 -->
 <div class="basic-2">
-    <div class="container">
         <div class="row">
             <div class="col-lg-6">
                 <div class="image-container">
@@ -273,14 +268,12 @@
                 <a class="btn-outline-lg page-scroll" href="sign-up.html">Sign up for free</a>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
-    </div> <!-- end of container -->
 </div> <!-- end of basic-3 -->
 <!-- end of invitation -->
 
 
 <!-- Pricing -->
 <div id="pricing" class="cards-2 bg-gray">
-    <div class="container">
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="h2-heading">Free forever tier and 2 pro plans</h2>
@@ -354,14 +347,12 @@
 
             </div> <!-- end of col -->
         </div> <!-- end of row -->
-    </div> <!-- end of container -->
 </div> <!-- end of cards-2 -->
 <!-- end of pricing -->
 
 
 <!-- Questions -->
-<div class="accordion-1">
-    <div class="container">
+<div class="accordion-1 bg-light    ">
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="h2-heading">Frequent questions</h2>
@@ -407,7 +398,6 @@
                 </div> <!-- end of accordion -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->
-    </div> <!-- end of container -->
 </div> <!-- end of accordion-1 -->
 <!-- end of questions -->
 

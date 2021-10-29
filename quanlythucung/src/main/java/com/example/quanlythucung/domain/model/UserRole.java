@@ -19,10 +19,13 @@ public class UserRole implements java.io.Serializable {
 
     public UserRole() {
     }
-
+    public UserRole(User user, Role role) {
+        this.user = user;
+        this.role = role;
+    }
 
     @Id
-    @GeneratedValue(strategy = IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", unique = true, nullable = false)
     public Integer getId() {
         return this.id;
