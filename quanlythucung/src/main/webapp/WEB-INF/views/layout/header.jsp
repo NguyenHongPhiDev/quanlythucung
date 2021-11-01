@@ -26,3 +26,22 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/stylesheet/${styleSheet}">
 </c:if>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/javascript/product.js"></script>
+<style>
+    .carousel-inner > .testimonial-group > .row {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .carousel-inner > .testimonial-group > .row > .col-sm-3 {
+        display: inline-block;
+        float: none;
+    }
+    .carousel-inner > .testimonial-group > .itemScroll{
+        display: block;!important;
+    }
+    
+</style>
+<c:if test="${!empty js}">
+    <script src="${pageContext.request.contextPath}/resources/javascript/${js}"></script>
+</c:if>

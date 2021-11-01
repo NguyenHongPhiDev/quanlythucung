@@ -28,10 +28,6 @@ for (let i = 0; i < elements.length; i++) {
 	});
 }
 
-document.querySelector(".navbar-toggler").addEventListener("click", () => {
-	document.querySelector(".offcanvas-collapse").classList.toggle("open");
-});
-
 // Hover on desktop
 function toggleDropdown(e) {
 	const _d = e.target.closest(".dropdown");

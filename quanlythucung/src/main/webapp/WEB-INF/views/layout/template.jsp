@@ -1,3 +1,4 @@
+<%@ page import="java.text.DecimalFormat" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ page session="false"%>
@@ -8,8 +9,13 @@
 <c:if test="${style!=null}">
 
 </c:if>
+    <style>
+        .table-responsive,.itemScroll{
+            overflow-x: hidden!important;
+        }
+    </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarExample">
+<body style="padding-right: 0px !important;">
 
 <!-- Navigation -->
 <tiles:insertAttribute name="menu" />
@@ -21,7 +27,5 @@
     </div>
 </div>
 <tiles:insertAttribute name="footer" />
-
-
 </body>
 </html>
