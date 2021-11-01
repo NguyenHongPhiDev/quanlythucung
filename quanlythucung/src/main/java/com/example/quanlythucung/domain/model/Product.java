@@ -1,9 +1,12 @@
 package com.example.quanlythucung.domain.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Data
 @Table(name = "product")
 public class Product {
     @Id
@@ -155,7 +158,7 @@ public class Product {
     public void setUpdatedUser(Timestamp updatedUser) {
         this.updatedUser = updatedUser;
     }
-    @OneToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "ID_Cat",referencedColumnName = "ID_Cat")
     private Categories categories;
 }

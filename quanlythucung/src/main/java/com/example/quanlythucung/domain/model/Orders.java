@@ -1,8 +1,11 @@
 package com.example.quanlythucung.domain.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "orders")
 public class Orders {
     @Id

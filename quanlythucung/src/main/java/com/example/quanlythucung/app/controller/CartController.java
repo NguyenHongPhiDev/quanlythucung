@@ -7,10 +7,7 @@ import com.example.quanlythucung.domain.service.ProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
 import java.util.Collection;
@@ -33,6 +30,7 @@ public class CartController {
         return "cart/list";
     }
     @RequestMapping(value = {"/add/{productId}/","/add/{productId}"})
+    @ResponseBody
     public String addItem(@PathVariable("productId") int productId, Model model){
         Optional<Product> item = productService.getOneProduct(productId);
         if(item != null){
@@ -42,7 +40,7 @@ public class CartController {
             cartItem.setQuantity(1);
             cartService.add(cartItem);
         }
-        return "redirect:/cart";
+        return "Add product success!";
     }
     @RequestMapping(value = {"/update/","/update"})
     public String updateCart(@ModelAttribute("cartItem") CartItem cartItem,Model model){

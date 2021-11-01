@@ -1,5 +1,6 @@
 package com.example.quanlythucung.domain.dto;
 
+import com.example.quanlythucung.domain.model.Categories;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -36,4 +37,5 @@ public class CartItem {
     private Timestamp createdUser;
 
     private Timestamp updatedUser;
+    private Categories categories;
 }
