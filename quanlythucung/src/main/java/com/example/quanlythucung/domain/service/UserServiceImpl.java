@@ -7,15 +7,15 @@ import com.example.quanlythucung.domain.model.UserRole;
 import com.example.quanlythucung.domain.repository.RoleRepository;
 import com.example.quanlythucung.domain.repository.UserRepository;
 import com.example.quanlythucung.domain.repository.UserRoleRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.Optional;
+import java.util.List;
 
 
 @Service
@@ -34,6 +34,10 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public List<User> getAll(){
+        return userRepository.findAll();
+    }
     @Override
     public User findOne(String username) {
         return  userRepository.findUserByUsername(username);
@@ -93,5 +97,13 @@ public class UserServiceImpl implements UserService {
         User result = userRepository.findUserByUsername(username);
         result.setPassword(passwordEncoder.encode(password));
         userRepository.save(result);
+    }
+    @Override
+    public void lockUser(Integer id){
+        userRepository.lockUser(id);
+    }
+    @Override
+    public void unlockUser(Integer id){
+        userRepository.unlockUser(id);
     }
 }

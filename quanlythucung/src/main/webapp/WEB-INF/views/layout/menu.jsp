@@ -73,11 +73,11 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown08" data-bs-toggle="dropdown" aria-expanded="false">Quản lý</a>
                     <ul class="dropdown-menu" aria-labelledby="dropdown08">
-                        <li><a class="dropdown-item" href="#">Danh sách thành viên</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/admin/member/list">Danh sách thành viên</a></li>
                         <li><div class="dropdown-divider"></div></li>
                         <li><a class="dropdown-item" href="#">Danh sách nhân viên</a></li>
                         <li><div class="dropdown-divider"></div></li>
-                        <li><a class="dropdown-item" href="#">Kho hàng</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/admin/product/list">Kho hàng</a></li>
                         <li><div class="dropdown-divider"></div></li>
                         <li><a class="dropdown-item" href="#">Thống kê</a></li>
                     </ul>
@@ -98,7 +98,7 @@
                             <ul class="dropdown-menu" aria-labelledby="dropdown09">
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/account">Thông tin tài khoản</a></li>
                                 <li><div class="dropdown-divider"></div></li>
-                                <li><a class="dropdown-item" href="#">Lịch sử giao dịch</a></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/account/history">Lịch sử giao dịch</a></li>
                                 <li><div class="dropdown-divider"></div></li>
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/account/password">Đổi mật khẩu</a></li>
                                 <li><div class="dropdown-divider"></div></li>

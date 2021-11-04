@@ -34,6 +34,8 @@ public class User implements java.io.Serializable {
     private String birthDate;
     @Column(name = "sex")
     private String sex;
+    @Column(name = "status")
+    private Integer status;
     @Column(name = "address")
     private String address;
     @Column(name = "phoneNumber")

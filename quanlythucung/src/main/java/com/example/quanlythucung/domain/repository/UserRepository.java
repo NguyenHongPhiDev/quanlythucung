@@ -2,10 +2,10 @@ package com.example.quanlythucung.domain.repository;
 
 import com.example.quanlythucung.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-
-import java.util.Optional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
@@ -17,4 +17,12 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Query(value = "select username from User where username=?1")
     User findUser(String username);
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE User u set u.status = 1 where u.id =?1")
+    void lockUser(Integer id);
+    @Transactional
+    @Modifying
+    @Query(value = "update User u set u.status = 0 where u.id =?1")
+    int unlockUser(Integer id);
 }

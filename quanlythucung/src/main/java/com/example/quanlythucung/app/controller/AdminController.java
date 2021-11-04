@@ -1,7 +1,14 @@
 package com.example.quanlythucung.app.controller;
 
 import com.example.quanlythucung.domain.model.Categories;
+import com.example.quanlythucung.domain.model.Product;
+import com.example.quanlythucung.domain.model.User;
 import com.example.quanlythucung.domain.service.CategoryService;
+import com.example.quanlythucung.domain.service.ProductService;
+import com.example.quanlythucung.domain.service.UserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +21,10 @@ import java.util.List;
 public class AdminController {
     @Inject
     CategoryService categoryService;
+    @Inject
+    ProductService productService;
+    @Inject
+    UserService userService;
     @RequestMapping(value = {"/memberList/","memberList"})
     public String memberList(){
         return "admin/memberList";
@@ -32,12 +43,6 @@ public class AdminController {
         categoryService.addCate(categories);
         return "redirect:/admin/category/list";
     }
-    @RequestMapping(value = {"/category/update/{idCate}","/category/update/{idCate}/"},method = RequestMethod.GET)
-    public String categoryUpdateForm(@PathVariable("idCate") Integer id,Model model){
-        Categories result  = categoryService.getOne(id);
-        model.addAttribute("item",result);
-        return "admin/categoryUpdate";
-    }
     @RequestMapping(value = {"/category/update/","/category/update"},method = RequestMethod.POST)
     public String categoryUpdate(@ModelAttribute("category")Categories categories){
         categoryService.UpdateCate(categories);
@@ -47,5 +52,49 @@ public class AdminController {
     public String categoryDelete(@PathVariable("idCate") Integer id){
         categoryService.RemoveCate(id);
         return "redirect:/admin/category/list";
+    }
+    //Product
+    @RequestMapping(value = {"/product/list/","/product/list"})
+    public String productList(Model model,@PageableDefault(size = 5) Pageable pageable){
+        List<Categories> categories = categoryService.getAll();
+        Page<Product> productList = productService.getAllProduct(pageable);
+        model.addAttribute("product",productList.getContent());
+        model.addAttribute("page", productList);
+        model.addAttribute("category",categories);
+        model.addAttribute("js","Admin/productAdmin.js");
+        return "admin/product";
+    }
+    @RequestMapping(value = {"/product/add/","/product/add"},method = RequestMethod.POST)
+    public String productAdd(@ModelAttribute("product") Product product){
+        productService.add(product);
+        return "redirect:/admin/product/list";
+    }
+    @RequestMapping(value = {"/product/update/","/product/update"},method = RequestMethod.POST)
+    public String productUpdate(@ModelAttribute("product")Product product){
+        productService.update(product);
+        return "redirect:/admin/product/list";
+    }
+    @RequestMapping(value = {"/product/remove/{idPro}","/product/remove/{idPro}/"})
+    public String productDelete(@PathVariable("idPro") Integer id){
+        productService.remove(id);
+        return "redirect:/admin/product/list";
+    }
+    //Member
+    @RequestMapping(value = {"/member/list/","/member/list"})
+    public String memberList(Model model){
+        List<User> list = userService.getAll();
+        model.addAttribute("member",list);
+        model.addAttribute("js","Admin/memberList.js");
+        return "admin/memberList";
+    }
+    @RequestMapping(value = {"/member/lock/{id}","/member/lock/{id}/"})
+    public String lockMember(@PathVariable("id") Integer id){
+        userService.lockUser(id);
+        return "redirect:/admin/member/list";
+    }
+    @RequestMapping(value = {"/member/unlock/{id}","/member/unlock/{id}/"})
+    public String unlockMember(@PathVariable("id") Integer id){
+        userService.unlockUser(id);
+        return "redirect:/admin/member/list";
     }
 }

@@ -3,17 +3,19 @@ package com.example.quanlythucung.domain.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Data
 @Table(name = "orders")
 public class Orders {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Ord")
     private Integer idOrd;
 
-    @Column(name = "ID_User")
-    private Integer idUser;
+    @Column(name = "UserName")
+    private String userName;
 
     @Column(name = "address")
     private String address;
@@ -21,11 +23,17 @@ public class Orders {
     @Column(name = "status")
     private Integer status;
 
+    @Column(name = "total")
+    private float total;
+
+    @Column(name = "date")
+    private Timestamp date;
+
     public Orders() {
     }
 
-    public Orders(Integer idUser, String address, Integer status) {
-        this.idUser = idUser;
+    public Orders(String Username, String address, Integer status) {
+        this.userName = Username ;
         this.address = address;
         this.status = status;
     }
@@ -38,13 +46,6 @@ public class Orders {
         this.idOrd = idOrd;
     }
 
-    public Integer getIdUser() {
-        return this.idUser;
-    }
-
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
-    }
 
     public String getAddress() {
         return this.address;

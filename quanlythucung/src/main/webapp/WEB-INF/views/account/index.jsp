@@ -2,8 +2,6 @@
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-3"><!--left col-->
-
-
             <div class="text-center">
                 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" alt="avatar">
                 <h6>Upload a different photo...</h6>

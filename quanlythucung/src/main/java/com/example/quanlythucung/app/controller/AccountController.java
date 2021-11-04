@@ -2,8 +2,14 @@ package com.example.quanlythucung.app.controller;
 
 import com.example.quanlythucung.domain.dto.Result;
 import com.example.quanlythucung.domain.dto.in.MemberChangePassword;
+import com.example.quanlythucung.domain.model.Orderdetail;
+import com.example.quanlythucung.domain.model.Orders;
 import com.example.quanlythucung.domain.model.User;
+import com.example.quanlythucung.domain.service.OrderDetailService;
+import com.example.quanlythucung.domain.service.OrderService;
 import com.example.quanlythucung.domain.service.UserService;
+import org.apache.tiles.autotag.core.runtime.annotation.Parameter;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +17,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.terasoluna.gfw.common.exception.ResourceNotFoundException;
 
 import javax.inject.Inject;
@@ -30,7 +34,10 @@ public class AccountController {
     UserService userService;
     @Inject
     PasswordEncoder passwordEncoder;
-
+    @Inject
+    OrderService orderService;
+    @Inject
+    OrderDetailService orderDetailService;
     private List<String> errLst = new ArrayList<String>();
     @RequestMapping(value = {"","/"})
     public String accountInit( Principal principal, Model model){
@@ -70,6 +77,22 @@ public class AccountController {
         }
         userService.changePassword(principal.getName(),memberChangePassword.getPasswordNew());
         return "redirect:/";
+    }
+    @RequestMapping(value = {"/history/","/history"})
+    public String historyPay(Principal principal,Model model){
+        User user = userService.findOne(principal.getName());
+        if(user== null){
+            throw new ResourceNotFoundException("Không tìm thấy người dùng");
+        }
+        List<Orders> listOrder = orderService.getAllByUser(principal.getName());
+        model.addAttribute("items",listOrder);
+        model.addAttribute("js","User/orderDetail.js");
+        return "account/history";
+    }
+    @ResponseBody
+    @RequestMapping(value = {"/history/{idOrder}","/history/{idOrder}/"},method = RequestMethod.POST)
+    public List<Orderdetail> orderDetail(@PathVariable("idOrder")Integer idOrder){
+        return orderDetailService.getAllByOrderId(idOrder);
     }
     private Result validateMember(@Validated MemberChangePassword memberChangePassword, BindingResult bindingResult, User user) {
         Result moResult = new Result();

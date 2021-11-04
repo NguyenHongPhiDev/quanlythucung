@@ -24,7 +24,7 @@
                             <button type="button" class="btn btn-primary" value="${item.idCat};${item.catName}" onclick="change(this)" data-bs-toggle="modal" data-bs-target="#updateCategory">
                                 <i class="fas fa-pencil-alt"></i>
                             </button>
-                            <a href="category/remove/${item.idCat}" class="btn btn-danger ml-3" rel="tooltip"><i class="fa fa-trash-o"></i></a>
+                            <a href="${pageContext.request.contextPath}/admin/category/remove/${item.idCat}" class="btn btn-danger ml-3" rel="tooltip"><i class="fa fa-trash-o"></i></a>
                         </td>
                     </tr>
             </c:forEach>
@@ -62,11 +62,11 @@
                 <form:form modelAttribute="category" action="${pageContext.request.contextPath}/admin/category/update" >
                     <div class="input-group">
                         <span class="input-group-text" >Id :</span>
-                        <input type="text" class="form-control" readonly id="idCat_">
+                        <input type="text" class="form-control" readonly name="idCat" id="idCat_">
                     </div>
                     <div class="input-group">
                         <span class="input-group-text" >Tên loại :</span>
-                        <input type="text" class="form-control" id="catName_" >
+                        <input type="text" class="form-control" name="catName" id="catName_" >
                     </div>
                     <div class="mt-4 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Thêm</button>

@@ -1,29 +1,33 @@
 package com.example.quanlythucung.domain.model;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
+@Setter
+@Getter
 @Table(name = "orderdetail")
 public class Orderdetail {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_OrdDetail")
     private Integer idOrdDetail;
 
-    @Column(name = "ID_Prod")
+    @Column(name = "ID_Prod",insertable = false,updatable = false)
     private Integer idProd;
 
     @Column(name = "ID_Ord")
     private Integer idOrd;
 
-    @Column(name = "updatedAt")
-    private Timestamp updatedAt;
-
     @Column(name = "createdAt")
     private Timestamp createdAt;
 
     @Column(name = "unitPrice")
-    private Double unitPrice;
+    private Float unitPrice;
 
     @Column(name = "quantity")
     private Integer quantity;
@@ -31,10 +35,9 @@ public class Orderdetail {
     public Orderdetail() {
     }
 
-    public Orderdetail(Integer idProd, Integer idOrd, Timestamp updatedAt, Timestamp createdAt, Double unitPrice, Integer quantity) {
+    public Orderdetail(Integer idProd, Integer idOrd, Timestamp createdAt, Float unitPrice, Integer quantity) {
         this.idProd = idProd;
         this.idOrd = idOrd;
-        this.updatedAt = updatedAt;
         this.createdAt = createdAt;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
@@ -64,28 +67,12 @@ public class Orderdetail {
         this.idOrd = idOrd;
     }
 
-    public Timestamp getUpdatedAt() {
-        return this.updatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public Timestamp getCreatedAt() {
         return this.createdAt;
     }
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
-    }
-
-    public Double getUnitPrice() {
-        return this.unitPrice;
-    }
-
-    public void setUnitPrice(Double unitPrice) {
-        this.unitPrice = unitPrice;
     }
 
     public Integer getQuantity() {
@@ -95,4 +82,7 @@ public class Orderdetail {
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
+    @OneToOne
+    @JoinColumn(name = "ID_Prod")
+    private Product product;
 }

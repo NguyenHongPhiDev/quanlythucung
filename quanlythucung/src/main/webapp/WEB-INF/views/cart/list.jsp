@@ -51,7 +51,7 @@
             </tr>
             </tbody>
         </table>
-        <a href="" class="btn btn-success pull-right mr-5"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Thanh toán</a>
+        <a href="${pageContext.request.contextPath}/cart/pay" class="btn btn-success pull-right mr-5"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Thanh toán</a>
     </div>
 </div>
 <style>

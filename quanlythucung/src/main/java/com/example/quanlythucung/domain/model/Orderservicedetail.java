@@ -1,8 +1,11 @@
 package com.example.quanlythucung.domain.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table(name = "orderservicedetail")
 public class Orderservicedetail {
     @Id
@@ -22,7 +25,7 @@ public class Orderservicedetail {
     private java.sql.Timestamp endDate;
 
     @Column(name = "unitPrice")
-    private Double unitPrice;
+    private float unitPrice;
 
     @Column(name = "URLImage")
     private String urlImage;
@@ -65,14 +68,6 @@ public class Orderservicedetail {
 
     public void setEndDate(java.sql.Timestamp endDate) {
         this.endDate = endDate;
-    }
-
-    public Double getUnitPrice() {
-        return this.unitPrice;
-    }
-
-    public void setUnitPrice(Double unitPrice) {
-        this.unitPrice = unitPrice;
     }
 
     public String getUrlImage() {

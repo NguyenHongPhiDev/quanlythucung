@@ -10,6 +10,7 @@ import java.sql.Timestamp;
 @Table(name = "product")
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID_Prod")
     private Integer idProd;
 

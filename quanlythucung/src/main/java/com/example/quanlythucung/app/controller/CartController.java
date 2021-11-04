@@ -1,16 +1,23 @@
 package com.example.quanlythucung.app.controller;
 
 import com.example.quanlythucung.domain.dto.CartItem;
+import com.example.quanlythucung.domain.model.Orders;
 import com.example.quanlythucung.domain.model.Product;
 import com.example.quanlythucung.domain.service.CartService;
+import com.example.quanlythucung.domain.service.OrderDetailService;
+import com.example.quanlythucung.domain.service.OrderService;
 import com.example.quanlythucung.domain.service.ProductService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.inject.Inject;
+import java.security.Principal;
+import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +28,10 @@ public class CartController {
     ProductService productService;
     @Inject
     CartService  cartService;
+    @Inject
+    OrderService orderService;
+    @Inject
+    OrderDetailService orderDetailService;
     @RequestMapping(value = {"","/"})
     public String cartInit(Model model){
         Collection<CartItem> cartItems = cartService.getItem();
@@ -28,6 +39,24 @@ public class CartController {
         model.addAttribute("total",cartService.getAmount());
         model.addAttribute("quantity",cartService.getCount());
         return "cart/list";
+    }
+    @RequestMapping(value = {"/pay/","/pay"})
+    public String cartPay(Model model, Principal principal){
+        if(principal==null){
+            return "login/login";
+        }
+        Orders orders = new Orders();
+        orders.setUserName(principal.getName());
+        orders.setStatus(0);
+        orders.setTotal((float) cartService.getAmount());
+        Integer orderId = orderService.creatOrder(orders);
+        Collection<CartItem> cartItems = cartService.getItem();
+        for (CartItem product : cartItems){
+            orderDetailService.createOrderDetail(product.getIdProd(),orderId,product.getPrice(),product.getQuantity());
+        }
+        Date date = new Date();
+        orderService.updateStatus(principal.getName(),orderId,new Timestamp(date.getTime()));
+        return "cart/succes";
     }
     @RequestMapping(value = {"/add/{productId}/","/add/{productId}"})
     @ResponseBody
