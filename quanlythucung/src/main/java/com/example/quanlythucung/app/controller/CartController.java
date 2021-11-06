@@ -39,12 +39,16 @@ public class CartController {
         model.addAttribute("cartItems",cartItems);
         model.addAttribute("total",cartService.getAmount());
         model.addAttribute("quantity",cartService.getCount());
+        model.addAttribute("title","Giỏ hàng");
+        model.addAttribute("js","Cart/pay.js");
         return "cart/list";
     }
-    @RequestMapping(value = {"/pay/","/pay"})
-    public String cartPay(Model model, Principal principal){
+
+    @ResponseBody
+    @RequestMapping(value = {"/pay/","/pay"},method = RequestMethod.POST)
+    public String cartPay(Principal principal){
         if(principal==null){
-            return "login/login";
+            return "0";
         }
         Orders orders = new Orders();
         orders.setUserName(principal.getName());
@@ -58,11 +62,11 @@ public class CartController {
         Date date = new Date();
         float balance = userService.getBalance(principal.getName());
         if(balance<cartService.getAmount()){
-            throw new BadRequestException(" enough balance!!!");
+            return "1";
         }
         orderService.updateStatus(principal.getName(),orderId,new Timestamp(date.getTime()));
         userService.deductionBalance(principal.getName(), (float) cartService.getAmount());
-        return "cart/succes";
+        return "2";
     }
     @RequestMapping(value = {"/add/{productId}/","/add/{productId}"})
     @ResponseBody

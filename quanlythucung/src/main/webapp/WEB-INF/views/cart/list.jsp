@@ -1,4 +1,9 @@
-<h2>Cart</h2>
+<head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<%--    <link rel="stylesheet" href="${f:h(pageContext.request.contextPath)}/resources/stylesheet/web/index.css"/>--%>
+
+</head>
+<h2>Giỏ Hàng</h2>
 <div class="panel-body">
     <div class="table-responsive">
         <table class="table">
@@ -25,8 +30,8 @@
                             <input class="form-control" type="hidden" value="${item.idProd}" name="idProd">
                             <input class="form-control" type="number" value="${item.quantity}" name="quantity" onblur="this.form.submit()"/>
                         </td>
-                        <td>${item.price} VNĐ</td>
-                        <td>${item.quantity*item.price} VNĐ</td>
+                        <td><fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
+                        <td><fmt:formatNumber value="${item.quantity*item.price}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
                         <td>
                             <a href="cart/remove/${item.idProd}" class="btn btn-primary" rel="tooltip"><i class="fa fa-trash-o"></i></a>
                         </td>
@@ -39,19 +44,19 @@
             </tr>
             <tr>
                 <td colspan="5" class="text-right">Total Product</td>
-                <td>${total} VNĐ</td>
+                <td><fmt:formatNumber value="${total}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
             </tr>
             <tr>
                 <td colspan="5" class="text-right">Total Shipping</td>
-                <td>${(no-1)*10000} VNĐ</td>
+                <td><fmt:formatNumber value="${(no-1)*10000}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
             </tr>
             <tr>
                 <td colspan="5" class="text-right"><strong>Total</strong></td>
-                <td>${total+(no-1)*10000} VNĐ</td>
+                <td><fmt:formatNumber value="${total+(no-1)*10000}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
             </tr>
             </tbody>
         </table>
-        <a href="${pageContext.request.contextPath}/cart/pay" class="btn btn-success pull-right mr-5"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Thanh toán</a>
+        <button class="btn btn-main float-right text-white mr-5" onclick="thanhToan()" type="button">Thanh Toán</button>
     </div>
 </div>
 <style>

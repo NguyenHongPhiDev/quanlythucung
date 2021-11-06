@@ -1,8 +1,8 @@
-<nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+<nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light p-0" aria-label="Main navigation">
     <div class="container">
 
         <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="${pageContext.request.contextPath}/"><img src="${pageContext.request.contextPath}/resources/images/logo.jpg" alt="alternative"></a>
+        <a class="navbar-brand logo-image" href="${pageContext.request.contextPath}/"><img style="width: 70px!important;height: 70px!important;" src="${pageContext.request.contextPath}/resources/images/logo1.jpg" alt="alternative"></a>
 
         <!-- Text Logo - Use this if you don't have a graphic logo -->
         <!-- <a class="navbar-brand logo-text" href="index.html">Ioniq</a> -->
@@ -97,6 +97,8 @@
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown09">
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/account">Thông tin tài khoản</a></li>
+                                <li><div class="dropdown-divider"></div></li>
+                                <li><a class="dropdown-item" href="${pageContext.request.contextPath}/nap-the">Nạp thẻ</a></li>
                                 <li><div class="dropdown-divider"></div></li>
                                 <li><a class="dropdown-item" href="${pageContext.request.contextPath}/account/history">Lịch sử giao dịch</a></li>
                                 <li><div class="dropdown-divider"></div></li>

@@ -1,45 +1,62 @@
 <!-- Features -->
-<div id="features" class="cards-1">
+<div id="features" class="cards-1 p-0">
         <div class="row">
             <div class="col-lg-12">
-                <h2 class="h2-heading">Ioniq CRM application is packed with <span>awesome features</span></h2>
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="${pageContext.request.contextPath}/resources/images/1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="${pageContext.request.contextPath}/resources/images/2.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="${pageContext.request.contextPath}/resources/images/3.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="${pageContext.request.contextPath}/resources/images/4.jpg" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                </div>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
         <div class="row">
-            <div class="col-lg-12">
-
+                <h2 class=" text-left mt-4">Các hoạt động của shop</h2>
+                <br>
+            <div class="col-lg-12 d-flex justify-content-end">
                 <!-- Card -->
-                <div class="card">
-                    <div class="card-icon">
-                        <span class="fas fa-headphones-alt"></span>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-title">Customer Lists</h6>
-                        <p>Et blandit nisl libero at arcu. Donec ac lectus sed tellus mollis viverra. Nullam pharetra ante at nunc elementum</p>
+                <div class=" col-3 p-0">
+                    <div class="card-title p-0">
+                        <div class="img-box">
+                            <img class="img-fluid pr-1" src="${pageContext.request.contextPath}/resources/images/5.png" alt="">
+                        </div>
                     </div>
                 </div>
                 <!-- end of card -->
 
                 <!-- Card -->
-                <div class="card">
-                    <div class="card-icon green">
-                        <span class="far fa-clipboard"></span>
-                    </div>
-                    <div class="card-body">
-                        <h6 class="card-title">Sales Tracking</h6>
-                        <p>Vulputate nibh feugiat. Morbi pellent diam nec libero lacinia, sed ultrices velit scelerisque. Nunc placerat justo sem</p>
+                <div class=" col-3 p-0">
+                    <div class="card-title p-0">
+                        <div class="img-box">
+                            <img class="img-fluid pl-1" src="${pageContext.request.contextPath}/resources/images/6.png" alt="">
+                        </div>
                     </div>
                 </div>
                 <!-- end of card -->
 
                 <!-- Card -->
-                <div class="card">
-                    <div class="card-icon blue">
-                        <span class="far fa-comments"></span>
+                <div class=" col-3 p-0">
+                    <div class="card-title p-0">
+                        <div class="img-box">
+                            <img class="img-fluid pl-2" src="${pageContext.request.contextPath}/resources/images/7.png" alt="">
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h6 class="card-title">Reporting Tool</h6>
-                        <p>Ety suscipit metus sollicitudin euqu isq imperdiet nibh nec magna tincidunt, nec pala vehicula neque sodales verum</p>
+                </div>
+                <div class=" col-3 p-0">
+                    <div class="card-title p-0">
+                        <div class="img-box">
+                            <img class="img-fluid pl-2" src="${pageContext.request.contextPath}/resources/images/8.png" alt="">
+                        </div>
                     </div>
                 </div>
                 <!-- end of card -->
@@ -48,302 +65,68 @@
         </div> <!-- end of row -->
 </div> <!-- end of cards-1 -->
 <!-- end of services -->
-
-
-<!-- Details 1 -->
-<div id="details" class="basic-1 bg-gray">
+<div class="row">
+    <h2 class=" text-left mt-4">Thông tin khuyến mại</h2>
+    <br>
+    <div class="col-lg-12">
+        <img width="100%" src="${pageContext.request.contextPath}/resources/images/11.jpg" alt="">
+    </div>
+</div>
+    
+<div id="pricing" class="cards-2 bg-gray pt-3 pb-0">
         <div class="row">
-            <div class="col-lg-6 col-xl-5">
-                <div class="text-container">
-                    <h2>Manage your customer’s expectations and get them to trust you</h2>
-                    <p>Vestibulum ullamcorper augue ex, imperdiet tincidunt tellus bibendum inconsectetur rutrum mauris orbi scelerisque cursus augue, ac suscipit sem mattis at ut suscipit</p>
-                    <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Modal</a>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-6 col-xl-7">
-                <div class="image-container">
-                    <img class="img-fluid" src="images/details-1.svg" alt="alternative">
-                </div> <!-- end of image-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-</div> <!-- end of basic-1 -->
-<!-- end of details 1 -->
-
-
-<!-- Details Modal -->
-<div id="staticBackdrop" class="modal fade" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="row">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="col-lg-8">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/details-modal.jpg" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-4">
-                    <h3>Goals Setting</h3>
-                    <hr>
-                    <p>In gravida at nunc sodales pretium. Vivamus semper, odio vitae mattis auctor, elit elit semper magna ac tum nico vela spider</p>
-                    <h6>User Feedback</h6>
-                    <p>Sapien vitae eros. Praesent ut erat a tellus posuere nisi more thico cursus pharetra finibus posuere nisi. Vivamus feugiat</p>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="d-flex">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="flex-grow-1">Tincidunt sem vel brita bet mala</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="flex-grow-1">Sapien condimentum sacoz sil necr</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="flex-grow-1">Fusce interdum nec ravon fro urna</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="flex-grow-1">Integer pulvinar biolot bat tortor</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-chevron-right"></i>
-                            <div class="flex-grow-1">Id ultricies fringilla fangor raq trinit</div>
-                        </li>
-                    </ul>
-                    <a id="modalCtaBtn" class="btn-solid-reg" href="#your-link">Details</a>
-                    <button type="button" class="btn-outline-reg" data-bs-dismiss="modal">Close</button>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of modal-content -->
-    </div> <!-- end of modal-dialog -->
-</div> <!-- end of modal -->
-<!-- end of details modal -->
-
-
-<!-- Details 2 -->
-<div class="basic-2">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="image-container">
-                    <img class="img-fluid" src="images/details-2.png" alt="alternative">
-                </div> <!-- end of image-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-6">
-                <div class="text-container">
-                    <h2>Anyone can start using the app with minimum skills</h2>
-                    <p>Velit dictum non proin egestas convallis nunc, eu auctor massa. Nam hendrerit, eros ut viverra lobortis, mauris nisi porta risus, placerat dignissim tellus auctor masse</p>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <div class="flex-grow-1">Fusce ipsum augue, ultrices rutrum est accel, pulvin</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <div class="flex-grow-1">Fermentum elit. Vestibulum cursuso bibendum viverra</div>
-                        </li>
-                        <li class="d-flex">
-                            <i class="fas fa-square"></i>
-                            <div class="flex-grow-1">Quisque blandit pulvinar metus, eu sta malesuada</div>
-                        </li>
-                    </ul>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of basic-2 -->
-<!-- end of details 2 -->
-
-
-<!-- Testimonials -->
-<div class="slider-1 bg-gray">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="h2-heading">Few words from our clients</h2>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-        <div class="row">
-            <div class="col-lg-12">
-
-                <!-- Card Slider -->
-                <div class="slider-container">
-                    <div class="swiper-container card-slider">
-                        <div class="swiper-wrapper">
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img class="card-image" src="images/testimonial-1.jpg" alt="alternative">
-                                    <div class="card-body">
-                                        <p class="testimonial-text">Tortor sodales eget. Vivamus imperdiet leo eu risus tincidunt uris. Proin placerat, urna hendrerit placerat erase convallis</p>
-                                        <p class="testimonial-author">Jude Thorn - Designer</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img class="card-image" src="images/testimonial-2.jpg" alt="alternative">
-                                    <div class="card-body">
-                                        <p class="testimonial-text">Eros volutpat ante mauris euismod sem, ut varius nisi lectus in urna. Integer luctus, nunc eget maximus intem, orci risus</p>
-                                        <p class="testimonial-author">Roy Smith - Developer</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img class="card-image" src="images/testimonial-3.jpg" alt="alternative">
-                                    <div class="card-body">
-                                        <p class="testimonial-text">Sed congue ex quam, sit amet venenatis dolor lacinia vulputate. Nunc pulvinar ex ex, sit amet scelerisque tellus pretium semper</p>
-                                        <p class="testimonial-author">Marsha Singer - Marketer</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img class="card-image" src="images/testimonial-4.jpg" alt="alternative">
-                                    <div class="card-body">
-                                        <p class="testimonial-text">Etiam est lorem, interdum non semper ut, bibendum vitae ante. Pellente sollicitun sagittis lectus. Aenean in comod</p>
-                                        <p class="testimonial-author">Tim Shaw - Designer</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img class="card-image" src="images/testimonial-5.jpg" alt="alternative">
-                                    <div class="card-body">
-                                        <p class="testimonial-text">Quisque nec turpis placerat, accumsan lorem lobortis, vestibulum elit. Fusce finibus nisl varius semper elementum vivamus</p>
-                                        <p class="testimonial-author">Lindsay Spice - Marketer</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                            <!-- Slide -->
-                            <div class="swiper-slide">
-                                <div class="card">
-                                    <img class="card-image" src="images/testimonial-6.jpg" alt="alternative">
-                                    <div class="card-body">
-                                        <p class="testimonial-text">Vulputate sed tellus nec, imperdiet luctus purus. Morbi lobortis massa a mi interdum condimentum. Integer non gravida nisi</p>
-                                        <p class="testimonial-author">Ann Blake - Developer</p>
-                                    </div>
-                                </div>
-                            </div> <!-- end of swiper-slide -->
-                            <!-- end of slide -->
-
-                        </div> <!-- end of swiper-wrapper -->
-
-                        <!-- Add Arrows -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <!-- end of add arrows -->
-
-                    </div> <!-- end of swiper-container -->
-                </div> <!-- end of slider-container -->
-                <!-- end of card slider -->
-
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of slider-1 -->
-<!-- end of testimonials -->
-
-
-<!-- Invitation -->
-<div class="basic-3">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h6>Ioniq will change the way you think about CRM solutions due to it’s advanced tools and integrated functionalities</h6>
-                <a class="btn-outline-lg page-scroll" href="sign-up.html">Sign up for free</a>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-</div> <!-- end of basic-3 -->
-<!-- end of invitation -->
-
-
-<!-- Pricing -->
-<div id="pricing" class="cards-2 bg-gray">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="h2-heading">Free forever tier and 2 pro plans</h2>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-        <div class="row">
+            <h2 class=" text-left mt-4">Thông tin hữu ích</h2>
+            <br>
             <div class="col-lg-12">
 
                 <!-- Card -->
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <img class="decoration-lines" src="images/decoration-lines.svg" alt="alternative"><span>Free tier</span><img class="decoration-lines flipped" src="images/decoration-lines.svg" alt="alternative">
+                            <div class="img-box">
+                                <img style="height: 110px !important;" class="img-fluid p-2" src="${pageContext.request.contextPath}/resources/images/tietkiem.png" alt="">
+                            </div>
                         </div>
-                        <ul class="list-unstyled li-space-lg">
-                            <li>Fusce pulvinar eu mi acm</li>
-                            <li>Curabitur consequat nisl bro</li>
-                            <li>Reget facilisis molestie</li>
-                            <li>Vivamus vitae sem in tortor</li>
-                            <li>Pharetra vehicula ornares</li>
-                            <li>Vivamus dignissim sit amet</li>
-                            <li>Ut convallis aliquama set</li>
-                        </ul>
-                        <div class="price">Free</div>
-                        <a href="sign-up.html" class="btn-solid-reg">Sign up</a>
+                        <div class="text-left mb-3"><strong>Pet Box là gì?</strong></br>
+                            Pet Box, hay còn gọi là Gói thuê bao thức ăn cho thú cưng, là một sản phẩm được xuất hiện lần đầu tiên trên thị trường Việt Nam.
+
+                            Pet Box là hình thức khách hàng thanh toán trước một chi phí nhất định, để sở hữu gói với mức giá và ưu đãi hấp dẫn nhất thị trường. Khách hàng sẽ được hưởng dịch vụ chăm sóc khách hàng và giao hàng tối ưu nhất: giao hàng miễn phí theo số lần quy định trong gói, có nhân viên phụ trách theo dõi riêng và nhắc nhở khi sản phẩm sắp được dùng hết, không cần tích trữ hàng hóa nhiều tại nhà, luôn nhận được sản phẩm mới với chất lượng cao, giảm mối lo hết sản phẩm đột ngột hay....
+                        </div>
+                        <a href="#" class="btn-solid-reg">Tìm hiểu</a>
                     </div>
                 </div>
                 <!-- end of card -->
 
-                <!-- Card -->
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <img class="decoration-lines" src="images/decoration-lines.svg" alt="alternative"><span>Advanced</span><img class="decoration-lines flipped" src="images/decoration-lines.svg" alt="alternative">
+                            <div class="img-box">
+                                <img style="height: 110px !important;" class="img-fluid p-2" src="${pageContext.request.contextPath}/resources/images/12.webp" alt="">
+                            </div>
                         </div>
-                        <ul class="list-unstyled li-space-lg">
-                            <li>Nunc commodo magna quis</li>
-                            <li>Lacus fermentum tincidunt</li>
-                            <li>Nullam lobortis porta diam</li>
-                            <li>Announcing of invita mro</li>
-                            <li>Dictum metus placerat luctus</li>
-                            <li>Sed laoreet blandit mollis</li>
-                            <li>Mauris non luctus est</li>
-                        </ul>
-                        <div class="price">$19<span>/month</span></div>
-                        <a href="sign-up.html" class="btn-solid-reg">Sign up</a>
-                    </div>
-                </div>
-                <!-- end of card -->
+                        <div class="text-left mb-3"><strong>Tẩy giun cho chó và những điều bạn cần phải biết</strong></br>
+                            Chó không thích uống thuốc, và thuốc tẩy giun cho chó cũng không ngoại lệ. Chúng luôn ngậm miệng chặt và phản kháng mãnh liệt. Một số chú chó còn ợ ngược trở ra. Cả 2 trường hợp chó đều tiếp nhận thuốc với liều lượng rất ít.
 
-                <!-- Card -->
+                            Cách dễ dàng nhất là đặt các viên thuốc vào đồ ăn của chúng. Vì chó thường đớp và nuốt luôn thức ăn do đó thuốc sẽ dễ dàng vào theo. Có những chú chó khôn lanh sẽ nhận ra thuốc trong đồ ăn. Đối với những chú chó con này thì bạn sẽ phải đặt thuốc trực tiếp thuốc vào miệng chúng. Hoặc có thể nghiền nhỏ trộn với thức ăn của chúng.
+
+                        </div>
+                        <a href="#" class="btn-solid-reg">Tìm hiểu</a>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="card-body">
                         <div class="card-title">
-                            <img class="decoration-lines" src="images/decoration-lines.svg" alt="alternative"><span>Professional</span><img class="decoration-lines flipped" src="images/decoration-lines.svg" alt="alternative">
+                            <div class="img-box">
+                                <img style="height: 110px !important;" class="img-fluid p-2" src="${pageContext.request.contextPath}/resources/images/13.webp" alt="">
+                            </div>
                         </div>
-                        <ul class="list-unstyled li-space-lg">
-                            <li>Quisque rutrum mattis</li>
-                            <li>Quisque tristique cursus lacus</li>
-                            <li>Interdum sollicitudin maec</li>
-                            <li>Quam posuerei pellentesque</li>
-                            <li>Est neco gravida turpis integer</li>
-                            <li>Mollis felis. Integer id quam</li>
-                            <li>Id tellus hendrerit lacinia</li>
-                        </ul>
-                        <div class="price">$29<span>/month</span></div>
-                        <a href="sign-up.html" class="btn-solid-reg">Sign up</a>
+                        <div class="text-left mb-3"><STRONG>Phải làm sao khi chó bị đau chân và đi khập khiễng?</STRONG><br>
+                            Chó bị đau chân cà nhắc có thể do nhiều nguyên nhân bởi loài chó rất hiếu động, chúng luôn muốn được chạy nhảy và vui đùa mọi lúc mọi nơi. Và đó cũng chính là một trong những lý do khiến chúng gặp những chấn thương về chân ngoài ý muốn. Nhiều chú chó đau chân không thể đi được, bao gồm cả chân trước và 2 chân sau. Chó bị đau chân sẽ làm cản trở mọi hoạt động của những chú cún. Khi đó, bạn sẽ làm thế nào?
+                            Có khá nhiều nguyên nhân khiến chân chó bị chấn thương như :chó bị trật khớp , căng cơ, sai khớp hay gãy xương… Nghiêm trọng hơn là chúng bị ...
+                        </div>
+                        <a href="#" class="btn-solid-reg">Tìm hiểu</a>
                     </div>
                 </div>
-                <!-- end of card -->
 
             </div> <!-- end of col -->
         </div> <!-- end of row -->
@@ -352,12 +135,7 @@
 
 
 <!-- Questions -->
-<div class="accordion-1 bg-light    ">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="h2-heading">Frequent questions</h2>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
+<div class="accordion-1 bg-light pt-3">
         <div class="row">
             <div class="col-lg-12">
                 <div class="accordion" id="accordionExample">
@@ -365,10 +143,15 @@
                     <!-- Accordion Item -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How can I contact you quickly and get a reasonable quote more for my project?</button>
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Hành động của loài mèo khiến bạn đi từ ngạc nhiên này đến ngạc nhiên khác</button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">Sed lacinia cursus viverra. Nunc sed libero euismod, congue dui a, vulputate quam. Pellentesque neque nisi, ultrices ut ipsum ac, mattis sollicitudin neque. Ut ac nunc sem. Etiam id erat facilisis magna sagittis porta. Donec eu dolor eu dolor finibus sodales consectetur, et condimentum elit tincidunt</div>
+                            <div class="accordion-body">
+                                1. Nghiến răng với lũ chim
+                                Chưa có lý giải cụ thể nào cho hành động này của mèo. Đôi khi mèo lại nghiến răng khi nhìn thấy một con chim hồng tước hoặc chim cúc cu bay qua cửa sổ.
+
+                                Một số nhà hành vi cho rằng điều này xuất phát từ sự chán nản và thất vọng bị kìm nén lâu ngày không thể ra ngoài đuổi chim. Những người khác cho rằng cử động hàm nhanh chóng của mèo là phản xạ bản năng cho phép mèo con chuẩn bị cơ bắp cho hành động giết con mồi.
+                            </div>
                         </div>
                     </div>
                     <!-- end of accordion-item -->
@@ -376,10 +159,23 @@
                     <!-- Accordion Item -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Is the Free Tier available for unlimited time or it will end more words after a while?</button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Tại sao mèo bị cúm? Các biểu hiện và cách chữa trị thế nào?</button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">Mauris faucibus placerat nisl. Sed eros odio, posuere at felis quis, tincidunt facilisis nibh. Nulla in ante sem. Nam aliquam urna nisi, cursus semper dolor convallis at. Duis vulputate est in consectetur, et condimentum elit tincidunt libero consectetur, et condimentum suis vulputate est in libero</div>
+                            <div class="accordion-body">
+                                Triệu chứng thường thấy cho bệnh cúm ở mèo
+                                Khi mắc bệnh cúm, chú mèo có thể bị chảy nước mắt, chảy nước mũi, viêm mắt, ho, hắt hơi, chán ăn và đôi khi bị loét miệng.
+
+                                Dấu hiệu rõ thấy nhất của mèo bị cúm là việc chất dịch chảy từ mắt và mũi. Nếu bị nhiễm khuẩn thứ cấp, nước dịch sẽ thay đổi thành màu vàng hoặc xanh lá cây.
+
+                                Triệu chứng ở mỗi chú mèo khi bị bệnh sẽ khác nhau, tùy vào thể trạng và tình trạng bệnh nặng nhẹ. Ngoài ra, bệnh nặng hay nhẹ còn tùy thuộc vào giống mèo, độ tuổi mèo, tình trạng tiêm chủng và bệnh sử trước đó.
+
+                                Đặc điểm cụ thể ở từng bộ phận nếu mèo bị nhiễm cúm là:
+
+                                - Mắt
+
+                                Khi một bé mèo bị mắc bệnh cúm, mắt sẽ tiết ra dịch trong suốt hoặc có màu. Nếu nặng, bé sẽ có nguy cơ bị loét giác mạc hoặc có hiện tượng mắt đỏ và viêm tấy (viêm kết mạc).
+                            </div>
                         </div>
                     </div>
                     <!-- end of accordion-item -->
@@ -387,10 +183,23 @@
                     <!-- Accordion Item -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Can I use the app on mobile devices or it’s limited more words to desktop use?</button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">3 loại sữa tắm cho thú cưng được ưa chuộng</button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">Nullam at diam at mi facilisis consectetur at non turpis. Proin a felis nisi. Sed at orci rutrum, tincidunt magna vel, pharetra libero. Proin mauris orci, faucibus eget malesuada vel, consectetur, et condimentum elit tincidunt pellentesque vitae ligula. Pellentesque euismod tincidun</div>
+                            <div class="accordion-body">
+                                1. Joyce & Dolls
+                                Thành lập năm 2000, Joyce & Dolls là thương hiệu sữa tắm, mỹ phẩm cho chó mèo nổi tiếng tại Trung Quốc. Sau hơn 20 năm thành lập, tới nay nhà máy sản xuất qui mô lớn tại Thượng Hải.
+
+                                Với dây chuyền công nghệ tiên tiến hiện đại, sử dụng nguyên liệu tiêu chuẩn được xác nhận bởi SEPA, đạt tiêu chuẩn chứng nhận ISO9001 và tiêu chuẩn GMP trở thành sản phẩm sữa tắm cho thú cưng bán chạy hàng đầu.
+
+                                Sữa tắm cho chó mèo Joyce & Dolls với thành phần tinh dầu hoa được để thanh tẩy lông, chống viêm và phát triển các tế bào mới.
+                                2. Xịt tắm khô hương nước hoa dành cho thú cưng Yu
+                                Trong điều kiện không cho phép như các chú chó, mèo đang bị bệnh và trong quá trình điều trị hoặc đang mang thai không thể tắm với nước được thì xịt tắm khô chính là cứu tinh cho người nuôi bởi sự tiện dụng cũng như tác dụng vẫn hiệu quả.
+                                3. SHD Việt Nam
+                                Cuối cùng là một cái tên đến từ Việt Nam SHD. Đây là công ty chuyên sản xuất và gia công các loại dầu tắm, sữa tắm, nước hoa, thuốc phòng và điều trị dành cho thú cưng. Sữa tắm cho chó mèo từ thương hiệu này mang đến khả năng cải thiện lưu thông máu và tạo sức đề kháng với các tác động của bên ngoài.
+
+                                Làm cho thú cưng có cảm giác thư giãn khi sử dụng sản phẩm. Sản phẩm chứa hương thơm từ các loại hoa tươi như một thông điệp tươi mới với hương của cây hợp hoan gợi cảm, tinh dầu hoa quýt làm sạch lông.
+                            </div>
                         </div>
                     </div>
                     <!-- end of accordion-item -->

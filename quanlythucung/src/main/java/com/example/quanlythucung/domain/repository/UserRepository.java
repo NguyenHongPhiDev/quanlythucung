@@ -33,6 +33,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     void deductionBalance (String userName,float total);
     @Transactional
     @Modifying
-    @Query(value = "update User u set u.balance = ?2 where u.username =?1")
+    @Query(value = "update User u set u.balance = u.balance+?2 where u.username =?1")
     void updateBalance (String userName,float price);
+
 }

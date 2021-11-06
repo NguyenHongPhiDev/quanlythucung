@@ -12,9 +12,4 @@ public class HomeController {
         model.addAttribute("styleSheet","web/index.css");
         return "web/index";
     }
-    @RequestMapping(value = {"/test","/test"}, method = {RequestMethod.GET, RequestMethod.POST})
-    public String test(Model model) {
-        model.addAttribute("styleSheet","web/index.css");
-        return "web/test";
-    }
 }

@@ -41,11 +41,11 @@
                         </a>
                     </div>
             </form:form >
-                <div class="text-center p-t-70 txt2">
-                    Phần mềm quản lý bán hàng <i class="far fa-copyright" aria-hidden="true"></i>
-                    <script type="text/javascript">document.write(new Date().getFullYear());</script> <a
-                        class="txt2" href="https://www.facebook.com/truongvo.vd1503/"> Code bởi Trường </a>
-                </div>
+            <div class="text-center p-t-70 txt2">
+                Phần mềm quản lý thú cưng <i class="far fa-copyright" aria-hidden="true"></i>
+                <script type="text/javascript">document.write(new Date().getFullYear());</script> <a
+                    class="txt2" href="#"> Được code bởi Phi </a>
+            </div>
         </div>
     </div>
 </div>

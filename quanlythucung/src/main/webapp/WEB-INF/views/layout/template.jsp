@@ -4,11 +4,13 @@
 <%@ page session="false"%>
 <html>
 <head>
-    <title>Home</title>
-    <tiles:insertAttribute name="header" />
-<c:if test="${style!=null}">
+    <link rel="icon" href="${pageContext.request.contextPath}/resources/images/logo1.jpg" type="image/x-icon">
+    <title>
 
-</c:if>
+        <c:if test="${title!=null}">
+            ${title}
+        </c:if></title>
+    <tiles:insertAttribute name="header" />
     <style>
         .table-responsive,.itemScroll{
             overflow-x: hidden!important;

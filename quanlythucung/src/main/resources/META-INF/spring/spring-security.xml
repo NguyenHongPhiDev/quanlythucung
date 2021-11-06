@@ -21,6 +21,7 @@
         <sec:csrf disabled="true"/>
         <sec:intercept-url pattern="/account" access="isAuthenticated()" />
         <sec:intercept-url pattern="/cart/pay" access="isAuthenticated()" />
+        <sec:intercept-url pattern="/nap-the" access="isAuthenticated()" />
         <sec:intercept-url pattern="/account/**" access="isAuthenticated()" />
         <sec:intercept-url pattern="/admin/**" access="hasRole('ADMIN')" />
         <sec:intercept-url pattern="/login" access="permitAll" />
