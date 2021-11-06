@@ -5,14 +5,17 @@
             <div class="col-lg-12">
                 <div class="footer-col first">
                     <h6>About Website</h6>
-                    <p class="p-small">Proin ut felis purus vestibulum in orci molestie, efficitur lacus ac pellentesque elit. Fusce mollis laoreet lobortis nulla ac efficitur lacus ac </p>
+                    <p class="p-small">
+                        QuanlyThuCung.vn - Hệ thống Siêu thị đồ thú cưng hàng đầu VN chả bị quản lý bởi ai ở Việt Nam.
+                        © 2021 QuanlyThuCung
+                    </p>
                 </div> <!-- end of footer-col -->
                 <div class="footer-col second">
-                    <h6>Links</h6>
+                    <h6>Cơ sở duy nhất</h6>
                     <ul class="list-unstyled li-space-lg p-small">
-                        <li>Important: <a href="terms.html">Terms & Conditions</a>, <a href="privacy.html">Privacy Policy</a></li>
-                        <li>Useful: <a href="#">Colorpicker</a>, <a href="#">Icon Library</a>, <a href="#">Illustrations</a></li>
-                        <li>Menu: <a href="#header">Home</a>, <a href="#features">Features</a>, <a href="#details">Details</a>, <a href="#pricing">Pricing</a></li>
+                        <li>Địa chỉ: <a href="#">Hoàng Mai-Hà Nội</a></li>
+                        <li>Số điện thoại: <a href="#">0123456789</a></li>
+                        <li>Email: <a href="#">Quanlythucung@web.com</a></li>
                     </ul>
                 </div> <!-- end of footer-col -->
                 <div class="footer-col third">
@@ -40,7 +43,7 @@
                                     <i class="fab fa-instagram fa-stack-1x"></i>
                                 </a>
                             </span>
-                    <p class="p-small">Quam posuerei pellent esque vam <a href="mailto:contact@site.com"><strong>contact@site.com</strong></a></p>
+                    <p class="p-small">Gửi phản hồi cho chúng tôi<a href="mailto:contact@site.com"><strong> quanlythucung@web.com</strong></a></p>
                 </div> <!-- end of footer-col -->
             </div> <!-- end of col -->
         </div> <!-- end of row -->

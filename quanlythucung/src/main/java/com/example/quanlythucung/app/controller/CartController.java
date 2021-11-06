@@ -1,12 +1,11 @@
 package com.example.quanlythucung.app.controller;
 
+import com.example.quanlythucung.domain.common.exception.BadRequestException;
 import com.example.quanlythucung.domain.dto.CartItem;
 import com.example.quanlythucung.domain.model.Orders;
 import com.example.quanlythucung.domain.model.Product;
-import com.example.quanlythucung.domain.service.CartService;
-import com.example.quanlythucung.domain.service.OrderDetailService;
-import com.example.quanlythucung.domain.service.OrderService;
-import com.example.quanlythucung.domain.service.ProductService;
+import com.example.quanlythucung.domain.model.User;
+import com.example.quanlythucung.domain.service.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
@@ -32,6 +31,8 @@ public class CartController {
     OrderService orderService;
     @Inject
     OrderDetailService orderDetailService;
+    @Inject
+    UserService userService;
     @RequestMapping(value = {"","/"})
     public String cartInit(Model model){
         Collection<CartItem> cartItems = cartService.getItem();
@@ -55,7 +56,12 @@ public class CartController {
             orderDetailService.createOrderDetail(product.getIdProd(),orderId,product.getPrice(),product.getQuantity());
         }
         Date date = new Date();
+        float balance = userService.getBalance(principal.getName());
+        if(balance<cartService.getAmount()){
+            throw new BadRequestException(" enough balance!!!");
+        }
         orderService.updateStatus(principal.getName(),orderId,new Timestamp(date.getTime()));
+        userService.deductionBalance(principal.getName(), (float) cartService.getAmount());
         return "cart/succes";
     }
     @RequestMapping(value = {"/add/{productId}/","/add/{productId}"})

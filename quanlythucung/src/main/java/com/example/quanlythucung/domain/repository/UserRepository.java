@@ -25,4 +25,14 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Modifying
     @Query(value = "update User u set u.status = 0 where u.id =?1")
     int unlockUser(Integer id);
+    @Query(value = "select u.balance from User u where u.username=?1")
+    float getBalance(String userName);
+    @Transactional
+    @Modifying
+    @Query(value = "update User u set u.balance = u.balance-?2 where u.username =?1")
+    void deductionBalance (String userName,float total);
+    @Transactional
+    @Modifying
+    @Query(value = "update User u set u.balance = ?2 where u.username =?1")
+    void updateBalance (String userName,float price);
 }

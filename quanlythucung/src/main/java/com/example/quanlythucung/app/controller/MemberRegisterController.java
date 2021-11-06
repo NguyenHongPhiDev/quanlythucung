@@ -15,7 +15,8 @@ public class MemberRegisterController {
     @Inject
     UserService userService;
     @RequestMapping(value = {"/",""})
-    public String registerMemberInit(){
+    public String registerMemberInit(Model model){
+        model.addAttribute("styleSheet","web/index.css");
         return "login/register";
     }
     @RequestMapping(value = {"/",""},params = "register")

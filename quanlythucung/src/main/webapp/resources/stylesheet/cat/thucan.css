@@ -19,9 +19,9 @@ a{
 }
 h2::after {
     content: "";
-    width: 100px;
+    width: 80%;
     position: absolute;
-    margin: 0 auto;
+    margin-left: 35px;
     height: 4px;
     border-radius: 1px;
     background: #7ac400;

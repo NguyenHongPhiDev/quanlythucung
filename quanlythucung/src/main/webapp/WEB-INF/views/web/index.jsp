@@ -399,10 +399,5 @@
             </div> <!-- end of col -->
         </div> <!-- end of row -->
 </div> <!-- end of accordion-1 -->
-<!-- end of questions -->
-
-<!-- Back To Top Button -->
-<button onclick="topFunction()" id="myBtn">
-    <img src="images/up-arrow.png" alt="alternative">
-</button>
+</div>
 <!-- end of back to top button -->

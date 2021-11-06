@@ -139,7 +139,9 @@ a:hover {
 .bg-gray {
 	background-color: #f9f8f8;
 }
-
+.btn-main{
+	background-color: #f25c05;
+}
 .btn-solid-reg {
 	display: inline-block;
 	padding: 1.375rem 2.25rem 1.375rem 2.25rem;
@@ -1513,4 +1515,16 @@ a:hover {
 
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+.price{
+	box-shadow: none;
+	outline: none;
+	border: none;
+	background-color: white !important;
+}
+.price:hover{
+	box-shadow: none;
+	outline: none;
+	border: none;
+	background-color: white !important;
 }

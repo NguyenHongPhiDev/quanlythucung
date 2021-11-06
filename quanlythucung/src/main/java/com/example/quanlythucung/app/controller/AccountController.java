@@ -42,7 +42,12 @@ public class AccountController {
     @RequestMapping(value = {"","/"})
     public String accountInit( Principal principal, Model model){
         User user = userService.findOne(principal.getName());
+        Integer order = orderService.getOrder(principal.getName());
+        Integer orderStatus1 =orderService.getOrderStatus1(principal.getName());
         model.addAttribute("user",user);
+        model.addAttribute("totalOrder",order);
+        model.addAttribute("totalOrder1",orderStatus1);
+        model.addAttribute("totalOrder0",order-orderStatus1);
         return "account/index";
     }
     @RequestMapping(value = {"","/"},method = RequestMethod.POST,params = "update")

@@ -18,4 +18,8 @@ public interface OrderRepository extends JpaRepository<Orders,Integer> {
     @Modifying
     @Query("update Orders o set o.status ='1',o.date=?3 where o.userName=?1 and o.idOrd =?2")
     void updateStatus(String username, Integer idOrder, Timestamp timestamp);
+    @Query(value = "select count(o) from Orders o where o.userName=?1")
+    Integer getQuantityOrder(String userName);
+    @Query(value = "select count(o) from Orders o where o.userName=?1 and o.status=1")
+    Integer getQuantityOrderStatus1(String userName);
 }

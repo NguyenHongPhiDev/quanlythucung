@@ -28,4 +28,10 @@ public interface UserService {
     void lockUser(Integer id);
 
     void unlockUser(Integer id);
+
+    float getBalance(String userName);
+
+    void deductionBalance(String userName, float total);
+
+    void updateBalance(String userName, float price);
 }

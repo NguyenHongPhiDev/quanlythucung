@@ -52,8 +52,13 @@ public class UserServiceImpl implements UserService {
         User user1 = new User();
         user1.setUsername(user.getUsername());
         //encode password
+
         String password1 = passwordEncoder.encode(user.getPassword());
         user1.setPassword(password1);
+        user1.setStatus(0);
+        user1.setEmail(user.getEmail());
+        Date date = new Date();
+        user1.setCreatedAt(new Timestamp(date.getTime()));
         UserRole userRole = new UserRole();
         Role role = roleRepository.findRoleByRoleName("ROLE_USER");
         userRole.setUser(user1);
@@ -86,6 +91,7 @@ public class UserServiceImpl implements UserService {
         result.setSex(user.getSex());
         result.setAddress(user.getAddress());
         result.setPhoneNumber(user.getPhoneNumber());
+        result.setUrlImage(user.getUrlImage());
         Date now = new Date();
         Timestamp updateTime = new Timestamp(now.getTime());
         result.setUpdatedAt(updateTime);
@@ -105,5 +111,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public void unlockUser(Integer id){
         userRepository.unlockUser(id);
+    }
+    @Override
+    public float getBalance(String userName){
+        return userRepository.getBalance(userName);
+    }
+    @Override
+    public void deductionBalance(String userName, float total){
+        userRepository.deductionBalance(userName, total);
+    }
+    @Override
+    public void updateBalance(String userName, float price){
+        userRepository.updateBalance(userName, price);
     }
 }

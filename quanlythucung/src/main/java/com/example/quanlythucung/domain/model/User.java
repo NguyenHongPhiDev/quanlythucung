@@ -1,6 +1,8 @@
 package com.example.quanlythucung.domain.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.joda.time.DateTime;
 
@@ -16,6 +18,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 @Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "USERNAME"))
 public class User implements java.io.Serializable {
     @Id
@@ -46,6 +49,8 @@ public class User implements java.io.Serializable {
     private Timestamp updatedAt;
     @Column(name = "URLImage")
     private String urlImage;
+    @Column(name = "balance")
+    private float balance;
 
 
 

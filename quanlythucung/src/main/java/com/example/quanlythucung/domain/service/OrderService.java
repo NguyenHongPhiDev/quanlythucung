@@ -13,4 +13,8 @@ public interface OrderService {
     Integer creatOrder(Orders orders);
 
     void updateStatus(String userName, Integer idOrder, Timestamp date);
+
+    int getOrder(String userName);
+
+    int getOrderStatus1(String userName);
 }

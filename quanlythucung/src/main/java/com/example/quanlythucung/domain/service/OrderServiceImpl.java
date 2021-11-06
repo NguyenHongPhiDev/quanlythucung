@@ -29,4 +29,12 @@ public class OrderServiceImpl implements OrderService {
     public void updateStatus(String userName, Integer idOrder, Timestamp date){
         orderRepository.updateStatus(userName,idOrder,date);
     }
+    @Override
+    public int getOrder(String userName){
+        return orderRepository.getQuantityOrder(userName);
+    }
+    @Override
+    public int getOrderStatus1(String userName){
+        return orderRepository.getQuantityOrderStatus1(userName);
+    }
 }

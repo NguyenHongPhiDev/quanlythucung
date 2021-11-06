@@ -91,7 +91,7 @@
     }
 
     .pagination .active a {
-        color: #999999;
+        color: #de6b78;
         cursor: default;
     }
 

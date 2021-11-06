@@ -3,32 +3,37 @@
     <div class="row">
         <div class="col-sm-3"><!--left col-->
             <div class="text-center">
-                <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" alt="avatar">
-                <h6>Upload a different photo...</h6>
-                <input type="file" class="text-center center-block file-upload">
+                <c:if test="${user.urlImage == null}">
+                    <img id="image" multiple src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" alt="avatar">
+                </c:if>
+                <c:if test="${user.urlImage != null}">
+                    <img id="image" width="192px" height="192px" multiple src="${pageContext.request.contextPath}/img/${user.urlImage}" class="rounded-circle" alt="avatar">
+                </c:if>
+                <input type="file" onchange="view()" name="img" id="file" class="text-center center-block file-upload">
             </div></hr><br>
 
 
-            <ul class="list-group">
-                    <li class="list-group-item">Website <i class="fa fa-dashboard fa-1x"></i></li>
-                    <li class="list-group-item p-0"><a class="nav-link" href="http://bootnipets.com">bootnipets.com</a></li>
+            <ul class="list-group price">
+                    <li class="list-group-item p-0">
+                        <div class="col-xs-6 input-group">
+                            <input type="password"  readonly value="<fmt:formatNumber value="${user.balance}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ" id="password" name="password" class="form-control price" >
+                            <div class="input-group-append price">
+                               <span class="input-group-text price">
+                                   <a>
+                                       <i toggle="#password" class="fa fa-eye toggle toggle-password price" data-map="inpPassword"></i>
+                                   </a>
+                               </span>
+                            </div>
+                        </div>
+                    </li>
             </ul>
 
             <ul class="list-group">
-                <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+                <li class="list-group-item text-muted">Hoạt động</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Số đơn hàng :</strong></span> ${totalOrder}</li>
+                <li class="list-group-item text-right"><span class="pull-left"><strong>Số đơn đã thanh toán :</strong></span> ${totalOrder1}</li>
+                <li class="list-group-item text-right"><span class="pull-left text-dark"><strong>Số đơn chưa thanh toán :</strong></span> ${totalOrder0}</li>
             </ul>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Social Media</div>
-                <div class="panel-body">
-                    <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
-                </div>
-            </div>
-
         </div><!--/col-3-->
         <div class="col-sm-9">
             <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -97,6 +102,7 @@
                                 <input type="text" class="form-control" name="phoneNumber" value="${user.phoneNumber}" id="phoneNumber" placeholder="Số điện thoại" >
                             </div>
                         </div>
+                                <input type="text" hidden class="form-control" name="urlImage" id="urlImage">
                         <div class="form-group">
                             <div class="col-xs-12">
                                 <br>
@@ -119,7 +125,44 @@
 </div><!--/row-->
 </div>
 <script>
-
+    $(document).ready(function () {
+        $(".toggle-password").click(function () {
+            $(this).toggleClass("fa-eye fa-eye-slash");
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
+                input.attr("style","")
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+        });
+    });
+    function view(){
+        let img = document.getElementById("file");
+        let data = new FormData()
+        data.append("img",img.files[0]);
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById("image").src = e.target.result;
+        };
+        reader.readAsDataURL(document.getElementById("file").files[0]);
+        $.ajax({
+            url: 'http://localhost:8080/quanlythucung/image/upload',
+            type: "POST",
+            iframe: true,
+            cache: false,
+            contentType:false,
+            processData:false,
+            data: data,
+            success : function(response) {
+                $('#urlImage').val(response);
+                console.log("upload ảnh thành công!")
+            },
+            error: function(){
+                console.log("Update ảnh lỗi!");
+            }
+        });
+    }
     function reset(){
         location.reload();
     }
