@@ -22,7 +22,7 @@ public class RestFB {
 
     public static String FACEBOOK_APP_ID = "182502713859613";
     public static String FACEBOOK_APP_SECRET = "d425bdf9f068cc0d865c0addd08b5334";
-    public static String FACEBOOK_REDIRECT_URL = "https://localhost:8080/authority-web/login-facebook";
+    public static String FACEBOOK_REDIRECT_URL = "https://localhost:8080/quanlythucung/login-facebook";
     public static String FACEBOOK_LINK_GET_TOKEN = "https://graph.facebook.com/oauth/access_token?client_id=%s&client_secret=%s&redirect_uri=%s&code=%s";
 
     public String getToken(final String code) throws ClientProtocolException, IOException {

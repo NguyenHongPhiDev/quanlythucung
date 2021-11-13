@@ -43,20 +43,22 @@
                 <td colspan="6">&nbsp;</td>
             </tr>
             <tr>
-                <td colspan="5" class="text-right">Total Product</td>
+                <td colspan="5" class="text-right">Tổng tiền sản phẩm :</td>
                 <td><fmt:formatNumber value="${total}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
             </tr>
             <tr>
-                <td colspan="5" class="text-right">Total Shipping</td>
+                <td colspan="5" class="text-right">Tổng tiền ship :</td>
                 <td><fmt:formatNumber value="${(no-1)*10000}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
             </tr>
             <tr>
-                <td colspan="5" class="text-right"><strong>Total</strong></td>
+                <td colspan="5" class="text-right"><strong>Tổng tiền phải trả :</strong></td>
                 <td><fmt:formatNumber value="${total+(no-1)*10000}" minFractionDigits="0" maxFractionDigits="0"/> VNĐ</td>
             </tr>
             </tbody>
         </table>
-        <button class="btn btn-main float-right text-white mr-5" onclick="thanhToan()" type="button">Thanh Toán</button>
+        <form:form action="${pageContext.request.contextPath}/cart/confirm">
+            <button name="no" value="${no}" type="submit" class="btn btn-main float-right text-white mr-5" >Thanh Toán</button>
+        </form:form>
     </div>
 </div>
 <style>

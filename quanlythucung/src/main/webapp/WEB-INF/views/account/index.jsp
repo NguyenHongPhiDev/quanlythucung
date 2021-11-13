@@ -2,17 +2,21 @@
 <div class="container bootstrap snippet">
     <div class="row">
         <div class="col-sm-3"><!--left col-->
-            <div class="text-center">
-                <c:if test="${user.urlImage == null}">
-                    <img id="image" multiple src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle" alt="avatar">
-                </c:if>
-                <c:if test="${user.urlImage != null}">
-                    <img id="image" width="192px" height="192px" multiple src="${pageContext.request.contextPath}/img/${user.urlImage}" class="rounded-circle" alt="avatar">
-                </c:if>
-                <input type="file" onchange="view()" name="img" id="file" class="text-center center-block file-upload">
-            </div></hr><br>
-
-
+            <div class="text-center label-image">
+                <label>
+                    <c:if test="${user.urlImage == null}">
+                            <img style="box-shadow: 0 0 16px 1px" id="image" multiple src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="rounded-circle " alt="avatar">
+                    </c:if>
+                    <c:if test="${user.urlImage != null}">
+                            <img style="box-shadow: 0 0 16px 1px" id="image" width="192px" height="192px" multiple src="${pageContext.request.contextPath}/img/${user.urlImage}" class="rounded-circle " alt="avatar">
+                    </c:if>
+                    <input type="file" hidden onchange="view()" name="img" id="file" class="text-center center-block file-upload">
+                </label>
+                <div class="middle">
+                    <i style="font-size: 40px" class="fa fa-camera"></i>
+                </div>
+            </div>
+            <br>
             <ul class="list-group price">
                     <li class="list-group-item p-0">
                         <div class="col-xs-6 input-group">

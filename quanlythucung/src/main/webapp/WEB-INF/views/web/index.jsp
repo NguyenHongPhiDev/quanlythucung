@@ -2,7 +2,7 @@
 <div id="features" class="cards-1 p-0">
         <div class="row">
             <div class="col-lg-12">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleSlidesOnly" class="carousel slide p-0" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="${pageContext.request.contextPath}/resources/images/1.png" class="d-block w-100" alt="...">
@@ -66,13 +66,216 @@
 </div> <!-- end of cards-1 -->
 <!-- end of services -->
 <div class="row">
+    <div class="col-12">
+        <h2 class=" text-left mt-4">Sản phẩm bán chạy nhất</h2>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+    <div class="carousel-inner">
+        <div class="item carousel-item active  testimonial-group">
+            <div class="row itemScroll" id="team1" >
+                <c:forEach var="item" items="${items}">
+                    <div class="col-sm-3">
+                        <div class="thumb-wrapper">
+                            <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                            <c:if test="${item.urlImage!=null}">
+                                <div class="img-box">
+                                    <img multiple width="100%" height="100%" src="${pageContext.request.contextPath}/img/${item.urlImage}" class="img-fluid p-2" alt="">
+                                </div>
+                            </c:if>
+                            <c:if test="${item.urlImage==null || item.urlImage==' '}">
+                                <div class="img-box">
+                                    <img multiple src="${pageContext.request.contextPath}/img/no_image.jpg" class="img-fluid" alt="">
+                                </div>
+                            </c:if>
+                            <p>${item.prodName}</p>
+                            <div class="thumb-content">
+                                <div class="star-rating">
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                    </ul>
+                                </div>
+                                <p class="item-price"><strike><fmt:formatNumber value="${item.price+item.price*30/100}" minFractionDigits="0" maxFractionDigits="0"/></strike><b><fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/> ₫</b></p>
+                                <button onclick="addItem(${item.idProd})" class="btn btn-primary">Thêm vào giỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                </c:forEach>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel controls -->
+    <a class="carousel-control-prev" id="teamPrev1" href="#myCarousel" data-slide="prev">
+        <i class="fa fa-angle-left"></i>
+    </a>
+    <a class="carousel-control-next" id="teamNext1" href="#myCarousel" data-slide="next">
+        <i class="fa fa-angle-right"></i>
+    </a>
+    </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h2 class=" text-left mt-4">Sản phẩm mới nhất</h2>
+        <div id="myCarousel1" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner">
+                <div class="item carousel-item active  testimonial-group">
+                    <div class="row itemScroll" id="team2" >
+                        <c:forEach var="item" items="${items1}">
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                    <c:if test="${item.urlImage!=null}">
+                                        <div class="img-box">
+                                            <img multiple width="100%" height="100%" src="${pageContext.request.contextPath}/img/${item.urlImage}" class="img-fluid p-2" alt="">
+                                        </div>
+                                    </c:if>
+                                    <c:if test="${item.urlImage==null || item.urlImage==' '}">
+                                        <div class="img-box">
+                                            <img multiple src="${pageContext.request.contextPath}/img/no_image.jpg" class="img-fluid" alt="">
+                                        </div>
+                                    </c:if>
+                                    <p>${item.prodName}</p>
+                                    <div class="thumb-content">
+                                        <div class="star-rating">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <p class="item-price"><strike><fmt:formatNumber value="${item.price+item.price*30/100}" minFractionDigits="0" maxFractionDigits="0"/></strike><b><fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/> ₫</b></p>
+                                        <button onclick="addItem(${item.idProd})" class="btn btn-primary">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" id="teamPrev2" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" id="teamNext2" href="#myCarousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h2 class=" text-left mt-4">Sản phẩm dành cho chó</h2>
+        <div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner">
+                <div class="item carousel-item active  testimonial-group">
+                    <div class="row itemScroll" id="team3" >
+                        <c:forEach var="item" items="${items2}">
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                    <c:if test="${item.urlImage!=null}">
+                                        <div class="img-box">
+                                            <img multiple width="100%" height="100%" src="${pageContext.request.contextPath}/img/${item.urlImage}" class="img-fluid p-2" alt="">
+                                        </div>
+                                    </c:if>
+                                    <c:if test="${item.urlImage==null || item.urlImage==' '}">
+                                        <div class="img-box">
+                                            <img multiple src="${pageContext.request.contextPath}/img/no_image.jpg" class="img-fluid" alt="">
+                                        </div>
+                                    </c:if>
+                                    <p>${item.prodName}</p>
+                                    <div class="thumb-content">
+                                        <div class="star-rating">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <p class="item-price"><strike><fmt:formatNumber value="${item.price+item.price*30/100}" minFractionDigits="0" maxFractionDigits="0"/></strike><b><fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/> ₫</b></p>
+                                        <button onclick="addItem(${item.idProd})" class="btn btn-primary">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" id="teamPrev3" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" id="teamNext3" href="#myCarousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h2 class=" text-left mt-4">Sản phẩm dành cho mèo</h2>
+        <div id="myCarousel3" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner">
+                <div class="item carousel-item active  testimonial-group">
+                    <div class="row itemScroll" id="team4" >
+                        <c:forEach var="item" items="${items3}">
+                            <div class="col-sm-3">
+                                <div class="thumb-wrapper">
+                                    <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                    <c:if test="${item.urlImage!=null}">
+                                        <div class="img-box">
+                                            <img multiple width="100%" height="100%" src="${pageContext.request.contextPath}/img/${item.urlImage}" class="img-fluid p-2" alt="">
+                                        </div>
+                                    </c:if>
+                                    <c:if test="${item.urlImage==null || item.urlImage==' '}">
+                                        <div class="img-box">
+                                            <img multiple src="${pageContext.request.contextPath}/img/no_image.jpg" class="img-fluid" alt="">
+                                        </div>
+                                    </c:if>
+                                    <p>${item.prodName}</p>
+                                    <div class="thumb-content">
+                                        <div class="star-rating">
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                            </ul>
+                                        </div>
+                                        <p class="item-price"><strike><fmt:formatNumber value="${item.price+item.price*30/100}" minFractionDigits="0" maxFractionDigits="0"/></strike><b><fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/> ₫</b></p>
+                                        <button onclick="addItem(${item.idProd})" class="btn btn-primary">Thêm vào giỏ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </div>
+            </div>
+            <!-- Carousel controls -->
+            <a class="carousel-control-prev" id="teamPrev4" href="#myCarousel" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control-next" id="teamNext4" href="#myCarousel" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div>
     <h2 class=" text-left mt-4">Thông tin khuyến mại</h2>
     <br>
     <div class="col-lg-12">
         <img width="100%" src="${pageContext.request.contextPath}/resources/images/11.jpg" alt="">
     </div>
 </div>
-    
 <div id="pricing" class="cards-2 bg-gray pt-3 pb-0">
         <div class="row">
             <h2 class=" text-left mt-4">Thông tin hữu ích</h2>

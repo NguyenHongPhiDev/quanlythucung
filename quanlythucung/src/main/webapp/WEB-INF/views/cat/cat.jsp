@@ -1,13 +1,13 @@
 <div class="container-xl">
     <div class="row">
         <div class="col-md-12">
-            <h2><b>Sản Phẩm</b></h2>
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+            <h2><b>${category}</b></h2>
+            <div id="myCarousel" class="carousel " data-ride="carousel" data-interval="0">
                 <div class="carousel-inner">
-                    <div class="item carousel-item active  testimonial-group">
+                    <div class="item carousel-item active ">
                         <div class="row itemScroll" >
                             <c:forEach var="item" items="${items}">
-                                <div class="col-sm-3">
+                                <div class="col-sm-3 mt-4">
                                     <div class="thumb-wrapper">
                                         <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
                                         <c:if test="${item.urlImage!=null}">
@@ -20,8 +20,8 @@
                                                 <img multiple src="${pageContext.request.contextPath}/img/no_image.jpg" class="img-fluid" alt="">
                                             </div>
                                         </c:if>
+                                        <p class="text-center" style="white-space: nowrap;width: 100%; overflow: hidden;text-overflow: ellipsis;">${item.prodName}</p>
                                         <div class="thumb-content">
-                                            <h4>${item.prodName}</h4>
                                             <div class="star-rating">
                                                 <ul class="list-inline">
                                                     <li class="list-inline-item"><i class="fa fa-star"></i></li>
@@ -31,22 +31,18 @@
                                                     <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
                                                 </ul>
                                             </div>
-                                            <p class="item-price"><strike>${item.price+200}</strike> <b>${item.price}</b></p>
-                                            <button onclick="addItem(${item.idProd})" class="btn btn-primary">Add to Cart</button>
+                                            <p class="item-price"><strike><fmt:formatNumber value="${item.price+item.price*30/100}" minFractionDigits="0" maxFractionDigits="0"/></strike><b><fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/> ₫</b></p>
+                                            <button onclick="addItem(${item.idProd})" class="btn btn-primary">Thêm vào giỏ</button>
                                         </div>
                                     </div>
                                 </div>
                             </c:forEach>
                         </div>
+                        <div class="pagination">
+                            <t:pagination page="${page}"/>
+                        </div>
                     </div>
                 </div>
-                <!-- Carousel controls -->
-                <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                <a class="carousel-control-next" href="#myCarousel" data-slide="next">
-                    <i class="fa fa-angle-right"></i>
-                </a>
             </div>
         </div>
     </div>

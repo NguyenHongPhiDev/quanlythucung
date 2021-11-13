@@ -48,6 +48,7 @@ public class AccountController {
         model.addAttribute("totalOrder",order);
         model.addAttribute("totalOrder1",orderStatus1);
         model.addAttribute("totalOrder0",order-orderStatus1);
+        model.addAttribute("styleSheet","user/index.css");
         return "account/index";
     }
     @RequestMapping(value = {"","/"},method = RequestMethod.POST,params = "update")

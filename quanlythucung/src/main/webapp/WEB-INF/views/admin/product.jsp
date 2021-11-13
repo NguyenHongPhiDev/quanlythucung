@@ -3,7 +3,7 @@
         <table class="table col-10 m-auto">
             <thead>
             <tr>
-                <td>
+                <td colspan="2" style="border: none;">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addNew">
                         Thêm mới
                     </button>
@@ -28,7 +28,7 @@
                     <fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/></td>
                 <td>${item.quantity}</td>
                 <td class="text-center">
-                    <button type="button" class="btn btn-primary" value="${item.idProd};${item.prodName};${item.categories.idCat};<fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/>;${item.quantity}" onclick="change(this)" data-bs-toggle="modal" data-bs-target="#updateProduct">
+                    <button type="button" class="btn btn-primary" value="${item.idProd};${item.prodName};${item.categories.idCat};<fmt:formatNumber value="${item.price}" minFractionDigits="0" maxFractionDigits="0"/>;${item.quantity};${item.urlImage}" onclick="change(this)" data-bs-toggle="modal" data-bs-target="#updateProduct">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                     <a href="${pageContext.request.contextPath}/admin/product/remove/${item.idProd}" class="btn btn-danger ml-3" rel="tooltip"><i class="fa fa-trash-o"></i></a>
@@ -71,10 +71,12 @@
                     </div>
                     <div class="mb-3">
                         <input type="text" hidden class="form-control" name="urlImage" id="urlImage">
-                        <input type="file" onchange="view()" name="img" id="file" class="form-control">
+                        <label class="btn btn-success">Thêm ảnh
+                            <input type="file" hidden onchange="view()" name="img" id="file" class="form-control">
+                        </label>
                     </div>
                     <div class="mt-4 d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary">Thêm</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
                         <button type="button" class="btn btn-secondary ml-3" data-bs-dismiss="modal">Đóng</button>
                     </div>
                 </form:form>
@@ -116,7 +118,9 @@
                     </div>
                     <div class="mb-3">
                         <input type="text" hidden class="form-control" name="urlImage" id="urlImage1">
-                        <input type="file" onchange="view1()" name="img" id="file1" class="form-control">
+                        <label class="btn btn-success">Thay ảnh
+                            <input type="file" hidden onchange="view1()" name="img" id="file1" class="form-control">
+                        </label>
                     </div>
                     <div class="mt-4 d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">Lưu</button>

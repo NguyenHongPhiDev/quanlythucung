@@ -92,7 +92,7 @@
                 <sec:authentication var="user" property="principal" />
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" href="#" id="dropdown09" data-bs-toggle="dropdown" aria-expanded="false">
-                                <img src="${pageContext.request.contextPath}/img/${user.getUser().urlImage}" alt="" width="16" height="16" class="rounded-circle me-2">
+<%--                                <img src="${pageContext.request.contextPath}/img/${user.getUser().urlImage}" alt="" width="16" height="16" class="rounded-circle me-2">--%>
                                     ${user.username}
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown09">

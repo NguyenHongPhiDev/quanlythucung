@@ -19,8 +19,13 @@ public class ProductServiceImpl implements ProductService {
     @Inject
     CategoryRepository categoryRepository;
     @Override
-    public List<Product> getAllProductByCat(Integer id){
-        List<Product> list = productRepository.getAllByIdCat(id);
+    public Page<Product> getAllProductByCat(Integer id,Pageable page){
+        Page<Product> list = productRepository.getAllByIdCat(id,page);
+        return list;
+    }
+    @Override
+    public List<Product> getAllProductByAllCat(Integer id,Integer id2,Integer id3,Integer id4){
+        List<Product> list = productRepository.getAllByIdCat(id,id2,id3,id4);
         return list;
     }
     @Override

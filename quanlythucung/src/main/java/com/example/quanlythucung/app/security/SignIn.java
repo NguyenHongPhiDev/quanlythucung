@@ -43,25 +43,15 @@ public class SignIn {
         UserDetails userDetail = restFB.buildUser(user);
         User user1 = userService.findOne(user.getId());
         if (user1 == null) {
-//            userService.create(user.getId(), "defaultPassword");
-            userService.create(null);
+            User user2 = new User();
+            user2.setUsername(user.getId());
+            user2.setPassword("default");
+            userService.create(user2);
         }
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetail, null,
                 userDetail.getAuthorities());
         authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         return "redirect:/";
-    }
-
-    @RequestMapping(value = "/signup", params = "form")
-    public String signupForm() {
-        return "login/SignUp";
-    }
-
-    @RequestMapping(value = "/signup", params = {"submit", "username", "password"})
-    public String signup(@RequestParam(value = "username") String username, @RequestParam(value = "password") String password) {
-//        userService.create(username, password);
-        userService.create(null);
-        return "/login";
     }
 }

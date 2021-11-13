@@ -40,19 +40,30 @@ public class CartController {
         model.addAttribute("total",cartService.getAmount());
         model.addAttribute("quantity",cartService.getCount());
         model.addAttribute("title","Giỏ hàng");
-        model.addAttribute("js","Cart/pay.js");
         return "cart/list";
+    }
+    @RequestMapping(value = {"/confirm","/confirm/"},params = "no")
+    public String cartConfirm(Model model,@RequestParam(value = "no")Integer no){
+        Collection<CartItem> cartItems = cartService.getItem();
+        model.addAttribute("cartItems",cartItems);
+        model.addAttribute("total",cartService.getAmount());
+        model.addAttribute("no1",no);
+        model.addAttribute("quantity",cartService.getCount());
+        model.addAttribute("title","Xác nhận thanh toán");
+        model.addAttribute("js","Cart/pay.js");
+        return "cart/cartConfirm";
     }
 
     @ResponseBody
     @RequestMapping(value = {"/pay/","/pay"},method = RequestMethod.POST)
-    public String cartPay(Principal principal){
+    public String cartPay( Principal principal,@RequestParam(value = "address")String address){
         if(principal==null){
             return "0";
         }
         Orders orders = new Orders();
         orders.setUserName(principal.getName());
         orders.setStatus(0);
+        orders.setAddress(address);
         orders.setTotal((float) cartService.getAmount());
         Integer orderId = orderService.creatOrder(orders);
         Collection<CartItem> cartItems = cartService.getItem();

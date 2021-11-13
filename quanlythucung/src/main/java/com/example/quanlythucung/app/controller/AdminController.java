@@ -55,7 +55,7 @@ public class AdminController {
     }
     //Product
     @RequestMapping(value = {"/product/list/","/product/list"})
-    public String productList(Model model,@PageableDefault(size = 5) Pageable pageable){
+    public String productList(Model model,@PageableDefault(size = 12) Pageable pageable){
         List<Categories> categories = categoryService.getAll();
         Page<Product> productList = productService.getAllProduct(pageable);
         model.addAttribute("product",productList.getContent());

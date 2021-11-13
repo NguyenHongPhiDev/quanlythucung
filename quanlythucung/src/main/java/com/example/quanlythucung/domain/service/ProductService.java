@@ -9,9 +9,11 @@ import java.util.Optional;
 
 
 public interface ProductService {
+    List<Product> getAllProductByAllCat(Integer id, Integer id2, Integer id3, Integer id4);
+
     Page<Product> getAllProduct(Pageable pageable);
 
-    List<Product> getAllProductByCat(Integer id);
+    Page<Product> getAllProductByCat(Integer id,Pageable page);
 
     Optional<Product> getOneProduct(int productId);
 

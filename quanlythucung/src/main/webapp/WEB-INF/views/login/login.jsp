@@ -18,9 +18,14 @@
                 <img src="${f:h(pageContext.request.contextPath)}/resources/images/team.jpg" alt="IMG">
             </div>
             <form:form class="login100-form validate-form" action="${f:h(pageContext.request.contextPath)}/login">
-                    <span class="login100-form-title">
+                <span class="login100-form-title">
                         <b>ĐĂNG NHẬP SHOP</b>
                     </span>
+                <c:if test="${param.containsKey('error')}">
+                    <span id="loginError">
+                        <h6 class="text-danger text-center">Tài khoản hoặc mật khẩu không chính xác!</h6>
+                    </span>
+                </c:if>
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" placeholder="Tài khoản " name="username"
                            id="username">
@@ -40,8 +45,13 @@
                 </div>
 
                 <div class="container-login100-form-btn">
-                    <button class="btn btn-main form-control" type="submit">Đăng Nhập</button>
+                    <button class="btn btn-main form-control text-white" type="submit">Đăng Nhập</button>
+                    <a class="btn btn-main form-control text-white mt-1" id="loginFB"
+                       href="https://www.facebook.com/dialog/oauth?client_id=182502713859613&redirect_uri=http://localhost:8080/quanlythucung/login-facebook">
+                        Login with facebook
+                    </a>
                 </div>
+
                 <div class="d-flex justify-content-between mb-3 mt-3">
                     <div class=" p-t-12">
                         <a class="txt2" href="${f:h(pageContext.request.contextPath)}/register">
